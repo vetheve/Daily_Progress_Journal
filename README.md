@@ -37,7 +37,8 @@ __Title:__ Portfolio Project: Personal Budget II
 
 __Last commits:__
 
-- "ADD: Implement and test Endpoints - POST new budget and GET all budget." → *Tests passed successfully*
+- "ADD: Implement and test Endpoints /budgets for POST Request new budget and GET Request all budgets." → *Tests passed successfully*
+- "ADD: Implement and test Endpoints /budgets/:id for GET Request." → *Test passed successfully*
 
 ### Issues !
 
