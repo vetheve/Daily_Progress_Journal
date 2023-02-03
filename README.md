@@ -146,6 +146,6 @@ Terminal output :
 ```
 ### Requests and proposals
 
->The error in the endpoint is that the variables are being used directly in the endpoint URL instead of being defined correctly, which could result in unexpected behavior and incorrect results when the endpoint is called. It's recommended to properly define the variables, such as :category in the case of /budgetbalance/category/:category, and use them in the endpoint URL to ensure that the endpoint works as expected. This will also make the endpoint more readable and maintainable, as it becomes clear what variables are being passed to the endpoint and what they are being used for.
+>The error in the endpoint is that the variables are being used directly in the endpoint URL instead of being defined correctly, which could result in unexpected behavior and incorrect results when the endpoint is called. It's recommended to properly define the variables, instead of `/:category` it is necessary to use `/budgetbalance/category/:category`.
 
 **Happy reporting !**
