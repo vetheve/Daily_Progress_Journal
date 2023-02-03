@@ -14,6 +14,8 @@ Daily course achievements goals track.
 - [x] **WEB Security Fundamentals : OSWAP 2017**
 - [x] **WEB Security Fundamentals : OSWAP Top 10**
 - [x] **WEB Security Fundamentals : Review**
+- [x] **User Athentication and Authorization : Introduction**
+- [x] **User Athentication and Authorization : Authentication, Authorization, and Encryption**
 - Total Progression → __60%__
 
 ### Project on going !
@@ -45,7 +47,7 @@ __Explanation:__
 >
 > The expected result is a 200 status code with a response body that contains the budget balance for that category with the key budget_balance. However, the actual result is a 200 status code, but the value of budget_balance is null. This means that the test is failing because the expected value of budget_balance is 300, but the actual value is null.
 >
-> This issue could be caused by a number of things, such as incorrect data in the database, errors in the SQL query, or a mistake in the implementation of the route. To troubleshoot the issue, it would be helpful to log any errors and check the data in the database to ensure that it is correct.
+> This issue could be caused by a number of things, errors in the SQL query, or a mistake in the implementation of the route. The data in the database is valid, no problem was observed.
 
 __Code:__
 
