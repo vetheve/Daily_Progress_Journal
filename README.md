@@ -59,7 +59,7 @@ __Explanation:__
 
 __Code:__
 
-Requête
+Requête - [[1]](https://github.com/vetheve/-Codecademy-Portfolio-Project-Personal-Budget-2/blob/main/server/budget_balance.js)
 ```
 budgetBalanceRouter
   .route('/:category')
@@ -93,7 +93,7 @@ budgetBalanceRouter
     });
 });
 ```
-Test avec AVA
+Test avec AVA - [[2]](https://github.com/vetheve/-Codecademy-Portfolio-Project-Personal-Budget-2/blob/main/test/balance/budget_balance_test.js)
 ```
 // Test to check if the Get request to '/budgetbalance/:category' route returns the total budget balance by category
 test('5.4 Get /budgetbalance/:category should returns the total budget balance by category', async t => {
