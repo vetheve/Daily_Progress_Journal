@@ -146,6 +146,8 @@ Terminal output :
 ```
 ### Requests and proposals
 
-Ideas, suggestions, enquiries for complementary information or requests for the allocation of additional resources.
+The error in the endpoint is that the variables are being used directly in the endpoint URL instead of being defined correctly. This could result in unexpected behavior and incorrect results when the endpoint is called.
+
+It's recommended to properly define the variables and use them in the endpoint URL to ensure that the endpoint works as expected. This will also make the endpoint more readable and maintainable, as it becomes clear what variables are being passed to the endpoint and what they are being used for.
 
 **Happy reporting !**
