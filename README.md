@@ -11,11 +11,11 @@ Daily Progress Journal
 ### Courses achievements !
 Daily course achievements goals track.
 
-- [x] **WEB Security Fundamentals : OSWAP 2017**
-- [x] **WEB Security Fundamentals : OSWAP Top 10**
-- [x] **WEB Security Fundamentals : Review**
-- [x] **User Athentication and Authorization : Introduction**
-- [x] **User Athentication and Authorization : Authentication, Authorization, and Encryption**
+- [x] **25. WEB Security Fundamentals : OSWAP 2017**
+- [x] **25. WEB Security Fundamentals : OSWAP Top 10**
+- [x] **25. WEB Security Fundamentals : Review**
+- [x] **26. User Athentication and Authorization : Introduction**
+- [x] **26. User Athentication and Authorization : Authentication, Authorization, and Encryption**
 - Total Progression → __60%__
 
 ### Project on going !
