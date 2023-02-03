@@ -35,6 +35,10 @@ __Title:__ Portfolio Project: Personal Budget II
 - [ ] **Deploy the application on Heroku** → __0%__
 - Total Progression → __72%__
 
+__Last commits:__
+
+- "ADD: Implement and test Endpoints - POST new budget and GET all budget." → *Tests passed successfully*
+
 ### Issues !
 
 __Title:__ Test Fails When Checking Budget Balance from GET Request
