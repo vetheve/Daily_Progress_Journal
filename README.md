@@ -16,6 +16,7 @@ Daily course achievements goals track.
 - [x] **25. WEB Security Fundamentals : Review**
 - [x] **26. User Athentication and Authorization : Introduction**
 - [x] **26. User Athentication and Authorization : Authentication, Authorization, and Encryption**
+- [ ] **26. User Athentication and Authorization : Session Authetication in Express.js** → *In progress*
 - Total Progression → __60%__
 
 ### Project on going !
