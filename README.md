@@ -14,12 +14,24 @@ Daily course achievements goals track.
 - [x] **WEB Security Fundamentals : OSWAP 2017**
 - [x] **WEB Security Fundamentals : OSWAP Top 10**
 - [x] **WEB Security Fundamentals : Review**
-- Progression → __60%__
+- Total Progression → __60%__
 
-### Project !
+### Project on going !
 
-- [ ] **Portfolio Project: Personal Budget II**
-- Progression → __50%__
+__Title:__ Portfolio Project: Personal Budget II
+
+- [x] **Setting up Git tracking** → __100%__
+- [x] **Design the database** → __100%__
+- [x] **Setup the database** → __100%__
+- [x] **Create the tables** → __100%__
+- [x] **Connect the database** → __100%__
+- [x] **Create your transactions endpoints** → __100%__
+- [ ] **Create the transactions** → __50%__
+- [ ] **Test the transactions** → __50%__
+- [ ] **Test the transactions endpoints** → __50%__
+- [ ] **Write the documentation using SWAGGER** → __50%__
+- [ ] **Deploy the application on Heroku** → __0%__
+- Total Progression → __72%__
 
 ### Issues !
 
