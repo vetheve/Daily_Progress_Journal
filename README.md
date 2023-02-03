@@ -1,2 +1,3 @@
-# Daily_Progress_Journal
+# Daily Progress Journal
+========================
 "Tracking My Progress: Daily Journaling to Achieve Goals"
