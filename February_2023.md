@@ -179,9 +179,10 @@ __Title:__ Portfolio Project: Personal Budget II
 
 __Last commits:__
 
-- "FIX: try to fix PUT request to /budgets/id/:id." → *Test fails*
+- "FIX: try to fix PUT request to /budgets/id/:id." → *Test failed*
 - "ADD: Implement and test Endpoint for deleting budget with DELETE Request."  → *Test passed successfully*
 - "ADD: Implement and test Endpoint for Fetching all expenses records with GET request."  → *Test passed successfully*
+- "FIX: Fix endpoint /budgets/budget_id/:budget_id." → *PUT request test failed but other tests passed successfully*
 
 ### Issues !
 
