@@ -311,8 +311,8 @@ Expected PSQL result
 ````
 balance_budget=# SELECT * FROM budgets
 balance_budget-# WHERE budget_id = '2022-02 Personnal Budget';
- id |        budget_id         |        dt_create        |        dt_update        |        dt_value         | category  | amount 
-----+--------------------------+-------------------------+-------------------------+-------------------------+-----------+--------
+ id |        budget_id         |        dt_create        |        dt_update        |        dt_value         |    category    | amount 
+----+--------------------------+-------------------------+-------------------------+-------------------------+----------------+--------
  61 | 2022-02 Personnal Budget | 2023-01-25 06:49:04.171 | 2023-02-06 06:49:04.171 | 2023-01-25 06:49:04.171 | Very personnal |      0
 (1 row)
 ````
