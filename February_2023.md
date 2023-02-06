@@ -157,7 +157,8 @@ ________________________________________________________________________________
 ### Courses achievements !
 Daily course achievements goals track.
 
-- [ ] **26. User Athentication and Authorization : Session Authetication in Express.js** → *In progress*
+- [x] **26. User Athentication and Authorization : Session Authetication in Express.js**
+- [ ] **26. User Athentication and Authorization : Password Authentication** → *In progress*
 - Total Progression → __60%__
 
 ### Project on going !
