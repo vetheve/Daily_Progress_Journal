@@ -60,7 +60,32 @@ __Explanation:__
 
 __Code:__
 
-Request - [[1]](https://github.com/vetheve/-Codecademy-Portfolio-Project-Personal-Budget-2/blob/main/server/budget_balance.js)
+AVA test - [[1]](https://github.com/vetheve/-Codecademy-Portfolio-Project-Personal-Budget-2/blob/main/test/balance/budget_balance_test.js)
+```
+// Test to check if the Get request to '/budgetbalance/:category' route returns the total budget balance by category
+test('5.4 Get /budgetbalance/:category should returns the total budget balance by category', async t => {
+
+    // Selecting an category to test with
+    const category = 'housing';
+
+    // Making a Get request to the '/budgetbalance/:category' route which does not exist yet
+    const res = await request(app).get(`/budgetbalance/${category}`);
+    
+    // Asserting that the status code of the response is 200
+    t.is(res.status, 200);
+    
+    // Print the object in the console
+    t.log(res.body)
+        
+    // Asserting that the response body is an object and contains the key 'Budget balance'
+    t.true(typeof res.body === 'object' && 'budget_balance' in res.body);
+    
+    // Asserting that the value of the 'Budget balance' key is 300
+    t.is(res.body['budget_balance'], '300');
+});
+```
+
+Request to test - [[2]](https://github.com/vetheve/-Codecademy-Portfolio-Project-Personal-Budget-2/blob/main/server/budget_balance.js)
 ```
 budgetBalanceRouter
   .route('/:category')
@@ -92,30 +117,6 @@ budgetBalanceRouter
             res.status(200).json(result.rows[0]);
         }
     });
-});
-```
-Test avec AVA - [[2]](https://github.com/vetheve/-Codecademy-Portfolio-Project-Personal-Budget-2/blob/main/test/balance/budget_balance_test.js)
-```
-// Test to check if the Get request to '/budgetbalance/:category' route returns the total budget balance by category
-test('5.4 Get /budgetbalance/:category should returns the total budget balance by category', async t => {
-
-    // Selecting an category to test with
-    const category = 'housing';
-
-    // Making a Get request to the '/budgetbalance/:category' route which does not exist yet
-    const res = await request(app).get(`/budgetbalance/${category}`);
-    
-    // Asserting that the status code of the response is 200
-    t.is(res.status, 200);
-    
-    // Print the object in the console
-    t.log(res.body)
-        
-    // Asserting that the response body is an object and contains the key 'Budget balance'
-    t.true(typeof res.body === 'object' && 'budget_balance' in res.body);
-    
-    // Asserting that the value of the 'Budget balance' key is 300
-    t.is(res.body['budget_balance'], '300');
 });
 ```
 
@@ -190,7 +191,9 @@ __Explanation:__
 
 >The AVA test for the PUT request to the "/budgets/id/:id" route is failing. The expected response status code is 201, indicating a successful update, but the actual status code received is 500, indicating an internal server error. This is likely due to an error in the endpoint code's SQL query that prevents the budget from being updated in the budgets table. The terminal output and PSQL result shows that the budget has not been updated with the new "Very personal" category value, as expected.
 
-AVA test [[3]](https://github.com/vetheve/-Codecademy-Portfolio-Project-Personal-Budget-2/blob/main/test/budgets/budgets_test.js)
+__Code:__
+
+AVA test - [[3]](https://github.com/vetheve/-Codecademy-Portfolio-Project-Personal-Budget-2/blob/main/test/budgets/budgets_test.js)
 ````
 // Test to check if the PUT request to '/budgets/id/:id' route updates a budget in the list budgets
 test('1.4 PUT /budgets/id/:id should update a budget in the list', async t => {
@@ -217,7 +220,7 @@ test('1.4 PUT /budgets/id/:id should update a budget in the list', async t => {
 
 
 ````
-Request to test [[4]](https://github.com/vetheve/-Codecademy-Portfolio-Project-Personal-Budget-2/blob/main/server/budgets.js)
+Request to test - [[4]](https://github.com/vetheve/-Codecademy-Portfolio-Project-Personal-Budget-2/blob/main/server/budgets.js)
 ````
 // Endpoint to handle requests to a specific budget resource by ID
 budgetsRouter
