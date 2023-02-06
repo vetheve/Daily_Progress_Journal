@@ -60,7 +60,7 @@ __Explanation:__
 
 __Code:__
 
-Requête - [[1]](https://github.com/vetheve/-Codecademy-Portfolio-Project-Personal-Budget-2/blob/main/server/budget_balance.js)
+Request - [[1]](https://github.com/vetheve/-Codecademy-Portfolio-Project-Personal-Budget-2/blob/main/server/budget_balance.js)
 ```
 budgetBalanceRouter
   .route('/:category')
@@ -190,7 +190,7 @@ __Explanation:__
 
 >The AVA test for the PUT request to the "/budgets/id/:id" route is failing. The expected response status code is 201, indicating a successful update, but the actual status code received is 500, indicating an internal server error. This is likely due to an error in the endpoint code's SQL query that prevents the budget from being updated in the budgets table. The terminal output and PSQL result shows that the budget has not been updated with the new "Very personal" category value, as expected.
 
-AVA test
+AVA test [[3]](https://github.com/vetheve/-Codecademy-Portfolio-Project-Personal-Budget-2/blob/main/test/budgets/budgets_test.js)
 ````
 // Test to check if the PUT request to '/budgets/id/:id' route updates a budget in the list budgets
 test('1.4 PUT /budgets/id/:id should update a budget in the list', async t => {
@@ -217,7 +217,7 @@ test('1.4 PUT /budgets/id/:id should update a budget in the list', async t => {
 
 
 ````
-Request to test
+Request to test [[4]](https://github.com/vetheve/-Codecademy-Portfolio-Project-Personal-Budget-2/blob/main/server/budgets.js)
 ````
 // Endpoint to handle requests to a specific budget resource by ID
 budgetsRouter
