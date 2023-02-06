@@ -181,6 +181,7 @@ __Last commits:__
 
 - "FIX: try to fix PUT request to /budgets/id/:id." → *Test fails*
 - "ADD: Implement and test Endpoint for deleting budget with DELETE Request."  → *Test passed successfully*
+- "ADD: Implement and test Endpoint for Fetching all expenses records with GET request."  → *Test passed successfully*
 
 ### Issues !
 
