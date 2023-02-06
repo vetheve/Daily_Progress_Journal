@@ -175,7 +175,7 @@ __Title:__ Portfolio Project: Personal Budget II
 - [ ] **Test the transactions endpoints** → __50%__
 - [ ] **Write the documentation using SWAGGER** → __50%__
 - [ ] **Deploy the application on Heroku** → __0%__
-- Total Progression → __72%__
+- Total Progression → __74%__
 
 __Last commits:__
 
