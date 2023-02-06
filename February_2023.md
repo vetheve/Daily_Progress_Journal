@@ -170,12 +170,12 @@ __Title:__ Portfolio Project: Personal Budget II
 - [x] **Create the tables** → __100%__
 - [x] **Connect the database** → __100%__
 - [x] **Create your transactions endpoints** → __100%__
-- [ ] **Create the transactions** → __50%__
-- [ ] **Test the transactions** → __50%__
-- [ ] **Test the transactions endpoints** → __50%__
+- [ ] **Create the transactions** → __60%__
+- [ ] **Test the transactions** → __60%__
+- [ ] **Test the transactions endpoints** → __60%__
 - [ ] **Write the documentation using SWAGGER** → __50%__
 - [ ] **Deploy the application on Heroku** → __0%__
-- Total Progression → __74%__
+- Total Progression → __76%__
 
 __Last commits:__
 
