@@ -198,20 +198,19 @@ __Code:__
 AVA test - [[3]](https://github.com/vetheve/-Codecademy-Portfolio-Project-Personal-Budget-2/blob/main/test/budgets/budgets_test.js)
 ````
 // Test to check if the PUT request to '/budgets/id/:id' route updates a budget in the list budgets
-test('1.4 PUT /budgets/id/:id should update a budget in the list', async t => {
+test('1.4 PUT /budgets/budget_id/:budget_id should update a budget in the list', async t => {
 
     // Selecting a budget ID to test with
     const budgetId = "2022-02 Personnal Budget";
 
     // Creating a new budget object to update
     const updatedBudget = {
-        budget_id: budgetId,
         item: "category",
-        value: "Very personal"
+        value: "Very personnal"
     };
     
-    // Making a PUT request to the '/budgets/:id' route with the updated budget object
-    const res = await request(app).put(`/budgets/id/${budgetId}`).send(updatedBudget);
+    // Making a PUT request to the '/budgets/budget_id/:budget_id' route with the updated budget object
+    const res = await request(app).put(`/budgets/budget_id/${budgetId}`).send(updatedBudget);
 
     // Asserting that the status code of the response is 201
     t.is(res.status, 201);
@@ -220,18 +219,18 @@ test('1.4 PUT /budgets/id/:id should update a budget in the list', async t => {
     t.log(res.body)
 });
 
-
 ````
 Request to test - [[4]](https://github.com/vetheve/-Codecademy-Portfolio-Project-Personal-Budget-2/blob/main/server/budgets.js)
 ````
 // Endpoint to handle requests to a specific budget resource by ID
 budgetsRouter
-    .route('/id/:id')
+    .route('/budget_id/:budget_id')
     // Update an existing budget in the list
+        // Update an existing budget in the list
     .put((req, res) => {
         // Destructure budget_id, item, and value from the request body
+        const budget_id = req.params.budget_id
         const {
-            budget_id,
             item,
             value
         } = req.body;
@@ -250,10 +249,10 @@ budgetsRouter
 
         // Execute a query to update the existing budget in the budgets table
         pool.query(`
-        -- Define the subquery to update an existing record in the budgets table
-        UPDATE budgets
-        SET $2 = $3, dt_update = to_timestamp($4, 'YYYY-MM-DD"T"HH24:MI:SS.MS')
-        WHERE budget_id = $1;
+      -- Define the subquery to update an existing record in the budgets table
+      UPDATE budgets
+      SET $2 = $3, dt_update = to_timestamp($4, 'YYYY-MM-DD"T"HH24:MI:SS.MS')
+      WHERE budget_id = $1;
         `, [element.budget_id, element.item, element.value, element.dt_update], (err, result) => {
             // If there is an error, return a 500 status code with an error message
             if (err) {
@@ -274,7 +273,7 @@ budgetsRouter
 Terminal output :
 
 ````
-  ✘ [fail]: 1.4 PUT /budgets/id/:id should update a budget in the list
+  ✘ [fail]: 1.4 PUT /budgets/budget_id/:budget_id should update a budget in the list
     ℹ {
         error: 'Error updating budget',
       }
