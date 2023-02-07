@@ -8,7 +8,7 @@ Daily Progress Journal
 |Mon  |Tue  |Wed  |Thu  |Fri  |Sat  |Sun  |
 |---:|---:|---:|---:|---:|---:|---:|
 |     |     |1    |2    |[3](#2023-02-03)    |4    |5    |
-|[6](#2023-02-06)    |7    |8    |9    |10   |11   |12   |
+|[6](#2023-02-06)    |[7](#2023-02-06)    |8    |9    |10   |11   |12   |
 |13   |14   |15   |16   |17   |18   |19   |
 |20   |21   |22   |23   |24   |25   |26   |
 |27   |28   |     |     |     |     |     |
@@ -158,7 +158,7 @@ Terminal output :
 
 >The error in the endpoint is that the variables are being used directly in the endpoint URL instead of being defined correctly, which could result in unexpected behavior and incorrect results when the endpoint is called. It's recommended to properly define the variables, instead of `/:category` it is necessary to use `/budgetbalance/category/:category`.
 
-________________________________________________________________________________________________________________________________________________________<br>
+
 
 #2023-02-06
 ---------------------------------------------------------
@@ -202,6 +202,7 @@ __Tags:__ #Node.js #Express.js #Testing #PostgreSQL #AVA
 __Explanation:__
 
 >The AVA test for the PUT request to the "/budgets/id/:id" route is failing. The expected response status code is 201, indicating a successful update, but the actual status code received is 500, indicating an internal server error. This is likely due to an error in the endpoint code's SQL query that prevents the budget from being updated in the budgets table. The terminal output and PSQL result shows that the budget has not been updated with the new "Very personal" category value, as expected.
+>The error message "syntax error at or near "$2"" suggests that there's a problem in the SQL query in the PUT endpoint of the "/budgets/id/:id" route. It seems that the query is attempting to set the value of an object's key to the value of a variable in the query, which is not allowed in SQL. To resolve this, I need to modify the query to properly reference the keys of the element object, or use a different approach to dynamically build the SQL query.
 
 __Code:__
 
@@ -360,5 +361,39 @@ balance_budget-# WHERE budget_id = '2022-02 Personnal Budget';
  61 | 2022-02 Personnal Budget | 2023-01-25 06:49:04.171 | 2023-02-06 06:49:04.171 | 2023-01-25 06:49:04.171 | Very personnal |      0
 (1 row)
 ````
+### Requests and proposals
+>I plan to change the process for changing a record's information. Instead of one route, there will now be two. The user will only be able to modify the description and the "dt_value". The previous process allowed the user to modify any value, including the creation date, which was a problem because it allowed the user to falsify the data. The two new routes will be:
+`/budgets/budget_id/:budget_id/description/:description`<br>
+`/budgets/budget_id/:budget_id/dt_value/:dt_value`
+
+
+#2023-02-07
+---------------------------------------------------------
+### Courses achievements !
+Daily course achievements goals track.
+
+- [x] **26. User Athentication and Authorization : Password Authentication**
+- [ ] **26. User Athentication and Authorization : OAuth 2.0** → *In progress*
+- [ ] **26. User Athentication and Authorization : Review** → *In progress*
+- Total Progression → __60%__
+
+### Project on going !
+
+__Title:__ Portfolio Project: Personal Budget II
+
+- [x] **Setting up Git tracking** → __100%__
+- [x] **Design the database** → __100%__
+- [x] **Setup the database** → __100%__
+- [x] **Create the tables** → __100%__
+- [x] **Connect the database** → __100%__
+- [x] **Create your transactions endpoints** → __100%__
+- [ ] **Create the transactions** → __60%__
+- [ ] **Test the transactions** → __60%__
+- [ ] **Test the transactions endpoints** → __60%__
+- [ ] **Write the documentation using SWAGGER** → __50%__
+- [ ] **Deploy the application on Heroku** → __0%__
+- Total Progression → __76%__
+
+__Last commits:__
 
 **Happy reporting !**
