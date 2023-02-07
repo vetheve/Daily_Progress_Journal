@@ -373,9 +373,12 @@ balance_budget-# WHERE budget_id = '2022-02 Personnal Budget';
 Daily course achievements goals track.
 
 - [x] **26. User Athentication and Authorization : Password Authentication**
-- [ ] **26. User Athentication and Authorization : OAuth 2.0** → *In progress*
-- [ ] **26. User Athentication and Authorization : Review** → *In progress*
-- Total Progression → __60%__
+- [x] **26. User Athentication and Authorization : OAuth 2.0**
+- [x] **26. User Athentication and Authorization : Review**
+- [x] **27. Data Security : Introduction**
+- [x] **27. Data Security : Transport Layer Security (TLS)** → *In progress*
+- [ ] **27. Data Security : Role-Based Access Control (RBAC)** → *Not begin yet*
+- Total Progression → __61%__
 
 ### Project on going !
 
@@ -395,5 +398,7 @@ __Title:__ Portfolio Project: Personal Budget II
 - Total Progression → __76%__
 
 __Last commits:__
+
+- I did not add any new features to my app today.
 
 **Happy reporting !**
