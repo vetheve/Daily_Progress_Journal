@@ -199,6 +199,8 @@ __Title:__ Test Fails When Updating Budget from PUT Request
 
 __Tags:__ #Node.js #Express.js #Testing #PostgreSQL #AVA
 
+__StackOverflow:__ [link](https://stackoverflow.com/questions/75385383/syntax-error-in-postgresql-query-how-to-dynamically-update-a-specific-column)
+
 __Explanation:__
 
 >The AVA test for the PUT request to the "/budgets/id/:id" route is failing. The expected response status code is 201, indicating a successful update, but the actual status code received is 500, indicating an internal server error. This is likely due to an error in the endpoint code's SQL query that prevents the budget from being updated in the budgets table. The terminal output and PSQL result shows that the budget has not been updated with the new "Very personal" category value, as expected.
@@ -435,5 +437,7 @@ __Last commits:__
 
 - "ADD: Implement and test Endpoints for updating a budget record." → *Test passed successfully*
 - "ADD: Implement and test Endpoints for updating a budget record - PUT Request."  → *Test passed successfully*
+
+
 
 **Happy reporting !**
