@@ -362,9 +362,7 @@ balance_budget-# WHERE budget_id = '2022-02 Personnal Budget';
 (1 row)
 ````
 ### Requests and proposals
->I plan to change the process for changing a record's information. Instead of one route, there will now be two. The user will only be able to modify the description and the "dt_value". The previous process allowed the user to modify any value, including the creation date, which was a problem because it allowed the user to falsify the data. The two new routes will be:
-`/budgets/budget_id/:budget_id/description/:description`<br>
-`/budgets/budget_id/:budget_id/dt_value/:dt_value`
+>I plan to change the process for changing a record's information. The user will only be able to modify the description, the "dt_value" & category. The previous process allowed the user to modify any value, including the creation date, which was a problem because it allowed the user to falsify the data. 
 
 
 #2023-02-07
@@ -435,6 +433,6 @@ __Title:__ Portfolio Project: Personal Budget II
 
 __Last commits:__
 
-- I did not add any new features to my app today.
-- 
+- "ADD: Implement and test Endpoints for updating a budget record." → *Test passed successfully*
+
 **Happy reporting !**
