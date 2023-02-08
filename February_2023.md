@@ -408,9 +408,13 @@ __Last commits:__
 Daily course achievements goals track.
 
 - [x] **27. Data Security : Role-Based Access Control (RBAC)**
-- [x] **27. Data Security : Authentification and Authorization in Postgre** →
-- [ ] **27. Data Security : Managing Environment Variables, Api Keys, etc...** → *In progress*
-- Total Progression → __62%__
+- [x] **27. Data Security : Authentification and Authorization in Postgre**
+- [x] **27. Data Security : Managing Environment Variables, Api Keys, etc...**
+- [x] **27. Data Security : Off-Platform Project Securing School Data**
+- [x] **27. Data Security : Review**
+- [x] **28. Common Attacks on Web Applications : Introduction**
+- [ ] **28. Common Attacks on Web Applications : Preventing Cross-Site Request Forgery (CSRF) Attacks** → *In progress*
+- Total Progression → __63%__
 
 ### Project on going !
 
