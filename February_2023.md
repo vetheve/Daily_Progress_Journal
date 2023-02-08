@@ -8,7 +8,7 @@ Daily Progress Journal
 |Mon  |Tue  |Wed  |Thu  |Fri  |Sat  |Sun  |
 |---:|---:|---:|---:|---:|---:|---:|
 |     |     |1    |2    |[3](#2023-02-03)    |4    |5    |
-|[6](#2023-02-06)    |[7](#2023-02-07)    |8    |9    |10   |11   |12   |
+|[6](#2023-02-06)    |[7](#2023-02-07)    |[8](#2023-02-08)     |9    |10   |11   |12   |
 |13   |14   |15   |16   |17   |18   |19   |
 |20   |21   |22   |23   |24   |25   |26   |
 |27   |28   |     |     |     |     |     |
@@ -401,4 +401,36 @@ __Last commits:__
 
 - I did not add any new features to my app today.
 
+
+#2023-02-08
+---------------------------------------------------------
+### Courses achievements !
+Daily course achievements goals track.
+
+- [x] **27. Data Security : Role-Based Access Control (RBAC)**
+- [x] **27. Data Security : Authentification and Authorization in Postgre** →
+- [ ] **27. Data Security : Managing Environment Variables, Api Keys, etc...** → *In progress*
+- Total Progression → __62%__
+
+### Project on going !
+
+__Title:__ Portfolio Project: Personal Budget II
+
+- [x] **Setting up Git tracking** → __100%__
+- [x] **Design the database** → __100%__
+- [x] **Setup the database** → __100%__
+- [x] **Create the tables** → __100%__
+- [x] **Connect the database** → __100%__
+- [x] **Create your transactions endpoints** → __100%__
+- [ ] **Create the transactions** → __60%__
+- [ ] **Test the transactions** → __60%__
+- [ ] **Test the transactions endpoints** → __60%__
+- [ ] **Write the documentation using SWAGGER** → __50%__
+- [ ] **Deploy the application on Heroku** → __0%__
+- Total Progression → __76%__
+
+__Last commits:__
+
+- I did not add any new features to my app today.
+- 
 **Happy reporting !**
