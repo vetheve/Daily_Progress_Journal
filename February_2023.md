@@ -528,7 +528,7 @@ __Explanation:__
 >
 >However, the X Window System is not available or cannot be connected to, and as a result, the Qt platform plugin "xcb" could not be loaded. The message also says that there are other available platform plugins that could be used, but none of them could be initialized.
 >
->The message also suggests that reinstalling the application might solve the problem, but it could also be a result of a more general issue with the X Window System or the display environment. In this case, you may need to troubleshoot the display environment and resolve the issue with the X Window System in order to get the application to work.
+>The message also suggests that reinstalling the application might solve the problem, but it could also be a result of a more general issue with the X Window System or the display environment.
 >
 >After trying to fix the issue, I found out that "DB Browser" cannot be installed on GitPod. So, I decided to install "vscode-sqlite" instead, which works well.
 
