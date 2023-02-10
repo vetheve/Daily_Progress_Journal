@@ -511,7 +511,7 @@ __Last commits:__
 
 - "ADD: Implement and test Endpoint for adding a expense record - POST Request." → *Test passed successfully*
 - "ADD: Implement and test Endpoint for fecthing a specfific expense record - GET Request." → *Test passed successfully*
-- 
+
 ### Issues !
 
 __Title:__ Install DB Browser Fails on GitPod
