@@ -8,7 +8,7 @@ Daily Progress Journal
 |Mon  |Tue  |Wed  |Thu  |Fri  |Sat  |Sun  |
 |---:|---:|---:|---:|---:|---:|---:|
 |     |     |1    |2    |[3](#2023-02-03)    |4    |5    |
-|[6](#2023-02-06)    |[7](#2023-02-07)    |[8](#2023-02-08)     |[9](#2023-02-09)   |10   |11   |12   |
+|[6](#2023-02-06)    |[7](#2023-02-07)    |[8](#2023-02-08)     |[9](#2023-02-09)   |[10](#2023-02-10)   |11   |12   |
 |13   |14   |15   |16   |17   |18   |19   |
 |20   |21   |22   |23   |24   |25   |26   |
 |27   |28   |     |     |     |     |     |
@@ -473,5 +473,55 @@ __Title:__ Portfolio Project: Personal Budget II
 __Last commits:__
 
 - I did not add any new features to my app today.
+
+#2023-02-10
+---------------------------------------------------------
+### Courses achievements !
+Daily course achievements goals track.
+
+- [ ] **28. Common Attacks on Web Applications : Securing Acme Bank - Defending Node Applications** → *Issue*
+- [ ] **28. Common Attacks on Web Applications : Securing Acme Bank - Defending Node Applications** → *In progress*
+- Total Progression → __66%__
+
+### Project on going !
+
+__Title:__ Portfolio Project: Personal Budget II
+
+- [x] **Setting up Git tracking** → __100%__
+- [x] **Design the database** → __100%__
+- [x] **Setup the database** → __100%__
+- [x] **Create the tables** → __100%__
+- [x] **Connect the database** → __100%__
+- [x] **Create your transactions endpoints** → __100%__
+- [ ] **Create the transactions** → __68%__
+- [ ] **Test the transactions** → __68%__
+- [ ] **Test the transactions endpoints** → __68%__
+- [ ] **Write the documentation using SWAGGER** → __50%__
+- [ ] **Deploy the application on Heroku** → __0%__
+- Total Progression → __78%__
+
+__Last commits:__
+
+- I did not add any new features to my app today.
+
+### Issues !
+
+__Title:__ Install DB Browser Fails on GitPod
+
+__Tags:__ #GitPod #sqlitebrowser #Install #vscode-sqlite #sqlite3
+
+__vscode-sqlite:__ [link](https://open-vsx.org/extension/alexcvzz/vscode-sqlite)
+
+__Explanation:__
+
+>As part of Codecademy project ["Securing Acme Bank - Defending Node Applications"](https://www.codecademy.com/paths/back-end-engineer-career-path/tracks/becp-22-fundamentals-of-operating-systems/modules/wdcp-22-operating-system-basics/articles/basics-of-operating-systems-article), I need to install "BD Browers" application on GitPod application on GitPod so I can manage a database.
+>
+>The issue I have encountered is related to the display of GUI applications in Linux. The error message says that the SQLite Database Browser application is using the Qt framework and it is trying to use the X Window System to display its user interface.
+>
+>However, the X Window System is not available or cannot be connected to, and as a result, the Qt platform plugin "xcb" could not be loaded. The message also says that there are other available platform plugins that could be used, but none of them could be initialized.
+>
+>The message also suggests that reinstalling the application might solve the problem, but it could also be a result of a more general issue with the X Window System or the display environment. In this case, you may need to troubleshoot the display environment and resolve the issue with the X Window System in order to get the application to work.
+>
+>After trying to fix the issue, I found out that "DB Browser" cannot be installed on GitPod. So, I decided to install "vscode-sqlite" instead, which works well.
 
 **Happy reporting !**
