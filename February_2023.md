@@ -514,7 +514,7 @@ __vscode-sqlite:__ [link](https://open-vsx.org/extension/alexcvzz/vscode-sqlite)
 
 __Explanation:__
 
->As part of Codecademy project ["Securing Acme Bank - Defending Node Applications"](https://www.codecademy.com/paths/back-end-engineer-career-path/tracks/becp-22-fundamentals-of-operating-systems/modules/wdcp-22-operating-system-basics/articles/basics-of-operating-systems-article), I need to install "BD Browers" application on GitPod application on GitPod so I can manage a database.
+>As part of Codecademy project ["Securing Acme Bank - Defending Node Applications"](https://www.codecademy.com/paths/back-end-engineer-career-path/tracks/becp-22-fundamentals-of-operating-systems/modules/wdcp-22-operating-system-basics/articles/basics-of-operating-systems-article), I need to install "BD Browers" application on GitPod so I can manage a database.
 >
 >The issue I have encountered is related to the display of GUI applications in Linux. The error message says that the SQLite Database Browser application is using the Qt framework and it is trying to use the X Window System to display its user interface.
 >
