@@ -542,11 +542,11 @@ Daily course achievements goals track.
 - [x] **29. Fundamentals of Operating Systems : Operating System basics**
 - [x] **29. Fundamentals of Operating Systems : Process and Threads**
 - [x] **29. Fundamentals of Operating Systems : Process Scheduling**
-- [ ] **29. Fundamentals of Operating Systems : Synchronization + Deadlock** → *In progress*
+- [x] **29. Fundamentals of Operating Systems : Synchronization + Deadlock** → *In progress*
 - [ ] **29. Fundamentals of Operating Systems : Memory Managment**
 - [ ] **29. Fundamentals of Operating Systems : Files Systems**
 - [ ] **29. Fundamentals of Operating Systems : Review**
-- Total Progression → __68%__
+- Total Progression → __69%__
 
 ### Project on going !
 
@@ -680,6 +680,6 @@ app.post('/public_forum', async function (request, response) {
   }
 });
 ````
->But I still no idea why the solution given by Codecademy does not work. 
+>But I still need to figure out why the solution given by Codecademy does not work. 
 
 **Happy reporting !**
