@@ -537,15 +537,12 @@ __Explanation:__
 ### Courses achievements !
 Daily course achievements goals track.
 
-- [x] **28. Common Attacks on Web Applications : Securing Acme Bank - Defending Node Applications** → *In progress*
-- [x] **29. Fundamentals of Operating Systems : Introduction**
-- [x] **29. Fundamentals of Operating Systems : Operating System basics**
-- [x] **29. Fundamentals of Operating Systems : Process and Threads**
-- [x] **29. Fundamentals of Operating Systems : Process Scheduling**
-- [x] **29. Fundamentals of Operating Systems : Synchronization + Deadlock** → *In progress*
-- [ ] **29. Fundamentals of Operating Systems : Memory Managment**
-- [ ] **29. Fundamentals of Operating Systems : Files Systems**
-- [ ] **29. Fundamentals of Operating Systems : Review**
+- [x] **28. Common Attacks on Web Applications : Securing Acme Bank - Defending Node Applications**
+- [x] **29. Fundamentals of Operating Systems : Synchronization + Deadlock**
+- [x] **29. Fundamentals of Operating Systems : Memory Managment**
+- [x] **29. Fundamentals of Operating Systems : Files Systems**
+- [x] **29. Fundamentals of Operating Systems : Review**
+- [ ] **29. Fundamentals of Operating Systems : IO Systems** → *In progress*
 - Total Progression → __69%__
 
 ### Project on going !
