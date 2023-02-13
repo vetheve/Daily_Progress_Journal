@@ -577,6 +577,8 @@ __Tags:__ #XSS #CommonAttacksOnWeb #express-validator #validator.escape #Securin
 
 __Codecademy video:__ [link](https://youtu.be/d0pWvLyngHM?t=605)
 
+__StackOverflow:__ [link](https://stackoverflow.com/questions/75432493/typeerror-validator-escape-is-not-a-function-express-validator6-12-1-packag/75434130#75434130)
+
 __Explanation:__
 
 >As part of my Codecademy Back-End Engineer training, I have to do a project outside of their platform. The goal of this project is to make sure a node application is protected from common web attacks.
@@ -632,4 +634,51 @@ app.post("/public_forum", function (request, response) {
   //response.end();
 });
 ````
+
+My solution :
+````
+// This code defines a post request handler for the "/public_forum" endpoint.
+app.post('/public_forum', async function (request, response) {
+  // Check if the user is logged in by checking the session data.
+  if (request.session.loggedin) {
+    // Trim and escape the incoming comment.
+    await check('comment').trim().escape().run(request);
+    // Get the validation result of the incoming comment.
+    const errors = validationResult(request);
+    // If the validation result contains errors, return a 400 status with the errors in a JSON format.
+    if (!errors.isEmpty()) {
+      return response.status(400).json({ errors: errors.array() });
+    }
+    // Get the comment from the request body.
+    const { comment } = request.body;
+    // If a valid comment exists, insert it into the "public_forum" database table.
+    if (comment) {
+      db.run(
+        `INSERT INTO public_forum (username,message) VALUES (?,?)`, [request.session.username, comment],
+        (err) => {
+          // If an error occurs while inserting the comment, log the error.
+          if (err) {
+            console.error(err);
+          }
+        }
+      );
+    }
+    // Select all the rows from the "public_forum" table.
+    db.all(`SELECT username,message FROM public_forum`, (err, rows) => {
+      // If an error occurs while selecting the rows, log the error.
+      if (err) {
+        console.error(err);
+      }
+      // Log the selected rows.
+      console.log(rows);
+      // Render the "forum" template, passing in the selected rows as a parameter.
+      response.render("forum", { rows });
+    });
+  } else {
+    // If the user is not logged in, redirect them to the homepage.
+    response.redirect("/");
+  }
+});
+````
+But I still no idea why the solution given by Codecademy does not work. 
 **Happy reporting !**
