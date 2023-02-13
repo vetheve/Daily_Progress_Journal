@@ -543,7 +543,7 @@ Daily course achievements goals track.
 - [x] **29. Fundamentals of Operating Systems : Files Systems**
 - [x] **29. Fundamentals of Operating Systems : Review**
 - [ ] **29. Fundamentals of Operating Systems : IO Systems** → *In progress*
-- Total Progression → __69%__
+- Total Progression → __70%__
 
 ### Project on going !
 
