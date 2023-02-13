@@ -537,7 +537,7 @@ __Explanation:__
 ### Courses achievements !
 Daily course achievements goals track.
 
-- [ ] **28. Common Attacks on Web Applications : Securing Acme Bank - Defending Node Applications** → *In progress*
+- [x] **28. Common Attacks on Web Applications : Securing Acme Bank - Defending Node Applications** → *In progress*
 - [x] **29. Fundamentals of Operating Systems : Introduction**
 - [x] **29. Fundamentals of Operating Systems : Operating System basics**
 - [x] **29. Fundamentals of Operating Systems : Process and Threads**
@@ -546,7 +546,7 @@ Daily course achievements goals track.
 - [ ] **29. Fundamentals of Operating Systems : Memory Managment**
 - [ ] **29. Fundamentals of Operating Systems : Files Systems**
 - [ ] **29. Fundamentals of Operating Systems : Review**
-- Total Progression → __67%__
+- Total Progression → __68%__
 
 ### Project on going !
 
@@ -567,7 +567,7 @@ __Title:__ Portfolio Project: Personal Budget II
 
 __Last commits:__
 
--
+- I did not add any new features to my app today.
 
 ### Issues !
 
