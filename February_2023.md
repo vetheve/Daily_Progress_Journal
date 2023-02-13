@@ -9,7 +9,7 @@ Daily Progress Journal
 |---:|---:|---:|---:|---:|---:|---:|
 |     |     |1    |2    |[3](#2023-02-03)    |4    |5    |
 |[6](#2023-02-06)    |[7](#2023-02-07)    |[8](#2023-02-08)     |[9](#2023-02-09)   |[10](#2023-02-10)   |11   |12   |
-|13   |14   |15   |16   |17   |18   |19   |
+|[13](#2023-02-13)   |14   |15   |16   |17   |18   |19   |
 |20   |21   |22   |23   |24   |25   |26   |
 |27   |28   |     |     |     |     |     |
 
@@ -532,4 +532,104 @@ __Explanation:__
 >
 >After trying to fix the issue, I found out that "DB Browser" cannot be installed on GitPod. So, I decided to install "vscode-sqlite" instead, which works well.
 
+#2023-02-13
+---------------------------------------------------------
+### Courses achievements !
+Daily course achievements goals track.
+
+- [ ] **28. Common Attacks on Web Applications : Securing Acme Bank - Defending Node Applications** → *In progress*
+- [x] **29. Fundamentals of Operating Systems : Introduction**
+- [x] **29. Fundamentals of Operating Systems : Operating System basics**
+- [x] **29. Fundamentals of Operating Systems : Process and Threads**
+- [x] **29. Fundamentals of Operating Systems : Process Scheduling**
+- [ ] **29. Fundamentals of Operating Systems : Synchronization + Deadlock** → *In progress*
+- [ ] **29. Fundamentals of Operating Systems : Memory Managment**
+- [ ] **29. Fundamentals of Operating Systems : Files Systems**
+- [ ] **29. Fundamentals of Operating Systems : Review**
+- Total Progression → __67%__
+
+### Project on going !
+
+__Title:__ Portfolio Project: Personal Budget II
+
+- [x] **Setting up Git tracking** → __100%__
+- [x] **Design the database** → __100%__
+- [x] **Setup the database** → __100%__
+- [x] **Create the tables** → __100%__
+- [x] **Connect the database** → __100%__
+- [x] **Create your transactions endpoints** → __100%__
+- [ ] **Create the transactions** → __72%__
+- [ ] **Test the transactions** → __72%__
+- [ ] **Test the transactions endpoints** → __72%__
+- [ ] **Write the documentation using SWAGGER** → __50%__
+- [ ] **Deploy the application on Heroku** → __0%__
+- Total Progression → __79%__
+
+__Last commits:__
+
+-
+
+### Issues !
+
+__Title:__ TypeError: validator.escape is not a function
+
+__Tags:__ #XSS #CommonAttacksOnWeb #express-validator #validator.escape #SecuringAcmeBank #DefendingNodeApplications
+
+__Codecademy video:__ [link](https://youtu.be/d0pWvLyngHM?t=605)
+
+__Explanation:__
+
+>As part of my Codecademy Back-End Engineer training, I have to do a project outside of their platform. The goal of this project is to make sure a node application is protected from common web attacks.
+>
+>One challenge I faced was securing the code from Cross-Site Scripting (XSS) attacks. To do this, I used a tool called express-validator. The code uses a function called validator.escape which is supposed to protect against any malicious code being inserted into an input form. However, I am getting an error in the console when I try to use it.
+
+Terminal output :
+````
+TypeError: validator.escape is not a function
+    at /workspace/Codecademy-Acme_Bank_Codecademy-Project/app.js:172:29
+    at Layer.handle [as handle_request] (/workspace/Codecademy-Acme_Bank_Codecademy-Project/node_modules/express/lib/router/layer.js:95:5)
+    at next (/workspace/Codecademy-Acme_Bank_Codecademy-Project/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/workspace/Codecademy-Acme_Bank_Codecademy-Project/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/workspace/Codecademy-Acme_Bank_Codecademy-Project/node_modules/express/lib/router/layer.js:95:5)
+    at /workspace/Codecademy-Acme_Bank_Codecademy-Project/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/workspace/Codecademy-Acme_Bank_Codecademy-Project/node_modules/express/lib/router/index.js:346:12)
+    at next (/workspace/Codecademy-Acme_Bank_Codecademy-Project/node_modules/express/lib/router/index.js:280:10)
+    at jsonParser (/workspace/Codecademy-Acme_Bank_Codecademy-Project/node_modules/body-parser/lib/types/json.js:101:7)
+    at Layer.handle [as handle_request] (/workspace/Codecademy-Acme_Bank_Codecademy-Project/node_modules/express/lib/router/layer.js:95:5)
+````
+Here is the code :
+````
+const validator = require("express-validator");
+
+app.post("/public_forum", function (request, response) {
+  if (request.session.loggedin) {
+    var comment = validator.escape(request.body.comment);
+    var username = request.session.username;
+    if (comment) {
+      db.all(
+        `INSERT INTO public_forum (username,message) VALUES ('${username}','${comment}')`,
+        (err, rows) => {
+          console.log(err);
+        }
+      );
+      db.all(`SELECT username,message FROM public_forum`, (err, rows) => {
+        console.log(rows);
+        console.log(err);
+        response.render("forum", { rows });
+      });
+    } else {
+      db.all(`SELECT username,message FROM public_forum`, (err, rows) => {
+        console.log(rows);
+        console.log(err);
+        response.render("forum", { rows });
+      });
+    }
+    comment = "";
+  } else {
+    response.redirect("/");
+  }
+  comment = "";
+  //response.end();
+});
+````
 **Happy reporting !**
