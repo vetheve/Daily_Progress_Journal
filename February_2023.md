@@ -685,14 +685,14 @@ app.post('/public_forum', async function (request, response) {
 Daily course achievements goals track.
 
 - [x] **29. Fundamentals of Operating Systems : IO Systems**
-- [ ] **30. Caching and CDNs: Introduction** → *In progress*
-- [ ] **30. Caching and CDNs**
-- [ ] **30. Caching and CDNs: Review**
-- [ ] **31. Scalability: Introduction**
-- [ ] **31. Scalability**
-- [ ] **31. Scalability: Review**
-- [ ] **32. DevOps Fundamentals: Introduction**
-- Total Progression → __70%__
+- [x] **30. Caching and CDNs: Introduction**
+- [x] **30. Caching and CDNs**
+- [x] **30. Caching and CDNs: Review**
+- [x] **31. Scalability: Introduction**
+- [x] **31. Scalability**
+- [x] **31. Scalability: Review**
+- [ ] **32. DevOps Fundamentals: Introduction** → *In progress*
+- Total Progression → __72%__
 
 ### Project on going !
 
