@@ -9,7 +9,7 @@ Daily Progress Journal
 |---:|---:|---:|---:|---:|---:|---:|
 |     |     |1    |2    |[3](#2023-02-03)    |4    |5    |
 |[6](#2023-02-06)    |[7](#2023-02-07)    |[8](#2023-02-08)     |[9](#2023-02-09)   |[10](#2023-02-10)   |11   |12   |
-|[13](#2023-02-13)   |14   |15   |16   |17   |18   |19   |
+|[13](#2023-02-13)   |[14](#2023-02-14)   |15   |16   |17   |18   |19   |
 |20   |21   |22   |23   |24   |25   |26   |
 |27   |28   |     |     |     |     |     |
 
@@ -678,5 +678,41 @@ app.post('/public_forum', async function (request, response) {
 });
 ````
 >But I still need to figure out why the solution given by Codecademy does not work. 
+
+#2023-02-14
+---------------------------------------------------------
+### Courses achievements !
+Daily course achievements goals track.
+
+- [x] **29. Fundamentals of Operating Systems : IO Systems**
+- [ ] **30. Caching and CDNs: Introduction** → *In progress*
+- [ ] **30. Caching and CDNs**
+- [ ] **30. Caching and CDNs: Review**
+- [ ] **31. Scalability: Introduction**
+- [ ] **31. Scalability**
+- [ ] **31. Scalability: Review**
+- [ ] **32. DevOps Fundamentals: Introduction**
+- Total Progression → __70%__
+
+### Project on going !
+
+__Title:__ Portfolio Project: Personal Budget II
+
+- [x] **Setting up Git tracking** → __100%__
+- [x] **Design the database** → __100%__
+- [x] **Setup the database** → __100%__
+- [x] **Create the tables** → __100%__
+- [x] **Connect the database** → __100%__
+- [x] **Create your transactions endpoints** → __100%__
+- [ ] **Create the transactions** → __72%__
+- [ ] **Test the transactions** → __72%__
+- [ ] **Test the transactions endpoints** → __72%__
+- [ ] **Write the documentation using SWAGGER** → __50%__
+- [ ] **Deploy the application on Heroku** → __0%__
+- Total Progression → __79%__
+
+__Last commits:__
+
+- I did not add any new features to my app today.
 
 **Happy reporting !**
