@@ -713,6 +713,6 @@ __Title:__ Portfolio Project: Personal Budget II
 
 __Last commits:__
 
-- I did not add any new features to my app today.
+- "ADD: Implement and test Endpoint for deleting a expense record - DELETE Request." → Test passed successfully.
 
 **Happy reporting !**
