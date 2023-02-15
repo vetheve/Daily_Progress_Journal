@@ -727,8 +727,8 @@ Daily course achievements goals track.
 - [ ] **32. DevOps Fundamentals: Infrastructures** → *In progress*
 - [ ] **32. DevOps Fundamentals: System Health**
 - [ ] **32. DevOps Fundamentals: Processes**
-- [ ] **32. DevOps Fundamentals: Review**
-- Total Progression → __72%__
+- [x] **32. DevOps Fundamentals: Review**
+- Total Progression → __73%__
 
 ### Project on going !
 
