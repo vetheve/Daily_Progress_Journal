@@ -724,9 +724,9 @@ __Tags:__ #PostgreSQL #database #foreignkeyconstraint
 
 __Explanation:__
 
->The failed test indicates that there is an error in updating an expense in the list. The error message indicates that the update violates a foreign key constraint, indicating that the specified budget ID is not present in the budgets table. The detail message shows the specific key that is not present in the budgets table.
+>The failed test indicates that there is an error in updating an expense in the list. The error message indicates that the update violates a foreign key constraint, indicating that the specified budget ID is not present in the `budgets` table. The detail message shows the specific key that is not present in the `budgets` table.
 >
->The date must exist in table `budgets` before using it in table `expenses`.
+>The date must exist in `budgets` table before using it in `expenses` table.
 
 Terminal output :
 ````
