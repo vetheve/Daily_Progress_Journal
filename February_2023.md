@@ -716,6 +716,77 @@ __Last commits:__
 - "ADD: Implement and test Endpoint for deleting a expense record - DELETE Request." → Test passed successfully.
 - "ADD: Implement and test Endpoint for updating a expense record - PUT Request." → Test failed
 
+### Issues !
+
+__Title:__ Error: insert or update on table "expenses" violates foreign key constraint "expenses_budget_id_fkey"
+
+__Tags:__ #PostgreSQL #database #foreignkeyconstraint
+
+__Explanation:__
+
+>The failed test indicates that there is an error in updating an expense in the list. The error message indicates that the update violates a foreign key constraint, indicating that the specified budget ID is not present in the budgets table. The detail message shows the specific key that is not present in the budgets table.
+>
+>The date must exist in table `budgets` before using it in table `expenses`.
+
+Terminal output :
+````
+/workspace/-Codecademy-Portfolio-Project-Personal-Budget-2/node_modules/pg-protocol/src/parser.ts:369
+      name === 'notice' ? new NoticeMessage(length, messageValue) : new DatabaseError(messageValue, length, name)
+                                                                    ^
+
+error: insert or update on table "expenses" violates foreign key constraint "expenses_budget_id_fkey"
+    at Parser.parseErrorMessage (/workspace/-Codecademy-Portfolio-Project-Personal-Budget-2/node_modules/pg-protocol/src/parser.ts:369:69)
+    at Parser.handlePacket (/workspace/-Codecademy-Portfolio-Project-Personal-Budget-2/node_modules/pg-protocol/src/parser.ts:188:21)
+    at Parser.parse (/workspace/-Codecademy-Portfolio-Project-Personal-Budget-2/node_modules/pg-protocol/src/parser.ts:103:30)
+    at Socket.<anonymous> (/workspace/-Codecademy-Portfolio-Project-Personal-Budget-2/node_modules/pg-protocol/src/index.ts:7:48)
+    at Socket.emit (node:events:513:28)
+    at addChunk (node:internal/streams/readable:315:12)
+    at readableAddChunk (node:internal/streams/readable:289:9)
+    at Socket.Readable.push (node:internal/streams/readable:228:10)
+    at TCP.onStreamRead (node:internal/stream_base_commons:190:23) {
+  length: 290,
+  severity: 'ERROR',
+  code: '23503',
+  detail: 'Key (budget_id)=(2022-01 Monthly Candy expense) is not present in table "budgets".',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'expenses',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'expenses_budget_id_fkey',
+  file: 'ri_triggers.c',
+  line: '2463',
+  routine: 'ri_ReportViolation'
+}
+
+  ✘ [fail]: 2.5 PUT /expenses/ulid_id/:ulid_id should update a expense in the list
+    ℹ {
+        error: 'Error updating expense',
+      }
+  ─
+
+  2.5 PUT /expenses/ulid_id/:ulid_id should update a expense in the list
+  test/expenses/expenses_test.js:114
+
+   113:     // Asserting that the status code of the response is 201
+   114:     t.is(res.status, 201);                                  
+   115:                                                             
+
+  Difference (- actual, + expected):
+
+  - 500
+  + 201
+
+  › test/expenses/expenses_test.js:114:7
+
+  ─
+
+  1 test failed
+````
 
 #2023-02-15
 ---------------------------------------------------------
