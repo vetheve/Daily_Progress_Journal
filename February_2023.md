@@ -816,7 +816,7 @@ __Title:__ Portfolio Project: Personal Budget II
 - [ ] **Test the transactions endpoints** → __76%__
 - [ ] **Write the documentation using SWAGGER** → __50%__
 - [ ] **Deploy the application on Heroku** → __0%__
-- Total Progression → __93%__
+- Total Progression → __79%__
 
 __Last commits:__
 
@@ -844,15 +844,16 @@ __Title:__ Portfolio Project: Personal Budget II
 - [x] **Create the tables** → __100%__
 - [x] **Connect the database** → __100%__
 - [x] **Create your transactions endpoints** → __100%__
-- [ ] **Create the transactions** → __76%__
-- [ ] **Test the transactions** → __76%__
-- [ ] **Test the transactions endpoints** → __76%__
+- [ ] **Create the transactions** → __84%__
+- [ ] **Test the transactions** → __84%__
+- [ ] **Test the transactions endpoints** → __84%__
 - [ ] **Write the documentation using SWAGGER** → __50%__
 - [ ] **Deploy the application on Heroku** → __0%__
-- Total Progression → __93%__
+- Total Progression → __82%__
 
 __Last commits:__
 
 - "ADD: Implement and test Endpoint for updating a expense record - PUT Request." → Test passed successfully.
+- "ADD: Implement and test Endpoint for fetching all revenues - GET Request." → Tests passed successfully.
 
 **Happy reporting !**
