@@ -884,6 +884,7 @@ __Title:__ Portfolio Project: Personal Budget II
 __Last commits:__
 
 - "ADD: Implement and test Endpoint for adding new revenue records - POST Request." → Test passed successfully.
+- "ADD: Implement and test Endpoint for fetching records of a specific revenue - GET Request." → Test passed successfully.
 
 ### Issues !
 
