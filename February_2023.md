@@ -968,6 +968,8 @@ error: value too long for type character varying(20)
   1 test failed
 ````
 
+
+
 __Title:__ "Express server returning 404 error for valid route when using Thunder Client for API testing"
 
 __Tags:__ #ExpressJS #NodeJS #APItesting #ThunderClient #404Error
@@ -999,109 +1001,6 @@ Internet page :
   </body>
 </html>
 ````
-/server/revenues.js :
-````
-// Import express Router
-const revenuesRouter = require('express').Router();
-
-// Body-parsing middleware to parse the request body
-const bodyParser = require('body-parser');
-revenuesRouter.use(bodyParser.json());
-
-// Import the required module for creating a connection pool to a PostgreSQL database
-const Pool = require('pg').Pool
-
-// Import ULID
-const ulid = require('ulid');
-
-// Create a connection pool instance with the given configuration options
-const pool = new Pool({
-    host: 'localhost',
-    database: 'balance_budget',
-    port: 5432,
-  });
-
-// Export revenuesRouter for use in other modules
-module.exports = revenuesRouter;
-
-// Endpoint to handle requests for the revenues
-revenuesRouter
-    .route('/')
-    // Endpoint to get all revenues
-    .get((req, res) => {
-        // Connect to the PostgreSQL database using the connection pool
-        pool.query(`
-    -- Define the subquery to get the total records of revenues
-    SELECT * FROM revenues;`, (err, result) => {
-            if (err) {
-                // If there was an error, return a 500 status code with an error message
-                console.log(err)
-                res.status(500).json({
-                    error: "Error fetching revenues"
-                });
-            } else {
-                // If the query was successful, return a 200 status code with the result
-                res.status(200).json(result.rows);
-            }
-        });
-    });
-````
-
-/server/api.js :
-````
-// Import the express module
-const express = require('express');
-
-// Create an instance of the express Router
-const apiRouter = express.Router();
-
-// Import the budget, expenses, revenues, and balances routers
-const budgetsRouter = require('./budgets.js');
-const expensesRouter = require('./expenses.js');
-const revenuesRouter = require('./revenues.js');
-const netBalanceRouter = require('./net_balance.js');
-const budgetBalanceRouter = require('./budget_balance.js');
-
-// Use the imported routers with the '/budgets', '/expenses', '/revenues', and '/balances' routes
-apiRouter.use('/budgets', budgetsRouter);
-apiRouter.use('/expenses', expensesRouter);
-apiRouter.use('/revenues', revenuesRouter);
-apiRouter.use('/netbalance', netBalanceRouter);
-apiRouter.use('/budgetbalance', budgetBalanceRouter);
-
-// Export the apiRouter
-module.exports = apiRouter
-````
-
-server.js
-````
-const express = require('express');
-const app = express();
-const bodyParser = require('body-parser');
-const cors = require('cors');
-
-module.exports = app;
-
-const PORT = process.env.PORT || 4001;
-
-// Add middleware for handling CORS requests from index.html
-app.use(cors());
-
-// Add middware for parsing request bodies here:
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
-// Mount your existing apiRouter below at the '/api' path.
-const apiRouter = require('./server/api');
-app.use('/api', apiRouter);
-
-
-// The server listening at PORT below:
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
-});  
-````
-
 
 Expected output :
 ````
