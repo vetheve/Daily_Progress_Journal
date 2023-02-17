@@ -9,7 +9,7 @@ Daily Progress Journal
 |---:|---:|---:|---:|---:|---:|---:|
 |     |     |1    |2    |[3](#2023-02-03)    |4    |5    |
 |[6](#2023-02-06)    |[7](#2023-02-07)    |[8](#2023-02-08)     |[9](#2023-02-09)   |[10](#2023-02-10)   |11   |12   |
-|[13](#2023-02-13)   |[14](#2023-02-14)   |[15](#2023-02-15)   |[16](#2023-02-16)   |17   |18   |19   |
+|[13](#2023-02-13)   |[14](#2023-02-14)   |[15](#2023-02-15)   |[16](#2023-02-16)   |[17](#2023-02-17)   |18   |19   |
 |20   |21   |22   |23   |24   |25   |26   |
 |27   |28   |     |     |     |     |     |
 
@@ -855,5 +855,113 @@ __Last commits:__
 
 - "ADD: Implement and test Endpoint for updating a expense record - PUT Request." → Test passed successfully.
 - "ADD: Implement and test Endpoint for fetching all revenues - GET Request." → Tests passed successfully.
+
+
+#2023-02-17
+---------------------------------------------------------
+### Courses achievements !
+Daily course achievements goals track.
+
+- Total Progression → __75%__
+
+### Project on going !
+
+__Title:__ Portfolio Project: Personal Budget II
+
+- [x] **Setting up Git tracking** → __100%__
+- [x] **Design the database** → __100%__
+- [x] **Setup the database** → __100%__
+- [x] **Create the tables** → __100%__
+- [x] **Connect the database** → __100%__
+- [x] **Create your transactions endpoints** → __100%__
+- [ ] **Create the transactions** → __84%__
+- [ ] **Test the transactions** → __84%__
+- [ ] **Test the transactions endpoints** → __84%__
+- [ ] **Write the documentation using SWAGGER** → __50%__
+- [ ] **Deploy the application on Heroku** → __0%__
+- Total Progression → __82%__
+
+__Last commits:__
+
+- "ADD: Implement and test Endpoint for adding new revenue records - POST Request." → Test passed successfully.
+
+### Issues !
+
+__Title:__ "Error adding revenue to PostgreSQL database: value too long for type character varying(20)"
+
+__Tags:__ #PostgreSQL #database #typecharacter 
+
+__Explanation:__
+
+>The error occurred when trying to add new revenue to a PostgreSQL database using a NodeJS server. The error message shows that the value being added to the database is too long for the specified data type "character varying(20)". The error occurred in the file "parser.ts" of the "pg-protocol" module, which is a dependency of the PostgreSQL driver for NodeJS.
+>
+>The error message also includes details of the PostgreSQL error, which has a code of "22001". This error code is related to a data type mismatch or data value out-of-range error. The error message indicates that the value being added to the database is longer than the specified character limit of 20.
+>
+>As a result of this error, the test case for adding new revenue to the database has failed, returning a status code of 500 instead of the expected 201.
+>
+>Here's the query I have to use to change the data type of the description column in the revenues table from VARCHAR(20) to VARCHAR(50):
+````
+ALTER TABLE revenues ALTER COLUMN description TYPE VARCHAR(50);
+````
+
+Terminal output :
+````
+/workspace/-Codecademy-Portfolio-Project-Personal-Budget-2/node_modules/pg-protocol/src/parser.ts:369
+      name === 'notice' ? new NoticeMessage(length, messageValue) : new DatabaseError(messageValue, length, name)
+                                                                    ^
+
+error: value too long for type character varying(20)
+    at Parser.parseErrorMessage (/workspace/-Codecademy-Portfolio-Project-Personal-Budget-2/node_modules/pg-protocol/src/parser.ts:369:69)
+    at Parser.handlePacket (/workspace/-Codecademy-Portfolio-Project-Personal-Budget-2/node_modules/pg-protocol/src/parser.ts:188:21)
+    at Parser.parse (/workspace/-Codecademy-Portfolio-Project-Personal-Budget-2/node_modules/pg-protocol/src/parser.ts:103:30)
+    at Socket.<anonymous> (/workspace/-Codecademy-Portfolio-Project-Personal-Budget-2/node_modules/pg-protocol/src/index.ts:7:48)
+    at Socket.emit (node:events:513:28)
+    at addChunk (node:internal/streams/readable:315:12)
+    at readableAddChunk (node:internal/streams/readable:289:9)
+    at Socket.Readable.push (node:internal/streams/readable:228:10)
+    at TCP.onStreamRead (node:internal/stream_base_commons:190:23) {
+  length: 98,
+  severity: 'ERROR',
+  code: '22001',
+  detail: undefined,
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'varchar.c',
+  line: '633',
+  routine: 'varchar'
+}
+
+  ✘ [fail]: 3.3 POST /revenues should add a new revenue to the list
+    ℹ {
+        error: 'Error adding revenue',
+      }
+  ─
+
+  3.3 POST /revenues should add a new revenue to the list
+  test/revenues/revenues_test.js:48
+
+   47:     // Asserting that the status code of the response is 201
+   48:     t.is(res.status, 201);                                  
+   49:                                                             
+
+  Difference (- actual, + expected):
+
+  - 500
+  + 201
+
+  › test/revenues/revenues_test.js:48:7
+
+  ─
+
+  1 test failed
+````
 
 **Happy reporting !**
