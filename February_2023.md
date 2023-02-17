@@ -982,6 +982,8 @@ __Explanation:__
 Since the `apiRouter` has mounted revenuesRouter under the `/revenues` path, any requests to `/api/revenues` will be handled by `revenuesRouter`.
 >
 >However, if I make a request directly to the `/revenues` path, it will not be matched by any of the routes defined in the `revenuesRouter`, resulting in a `404 error`.To fix the issue, I need to update the route path for revenuesRouter to match the expected path, which is `http://localhost:4001/api/revenues`.
+>
+>I try to retrieve revenue data for a specific ULID identifier, but I get the full list of revenues records.
 
 Request
 ````
