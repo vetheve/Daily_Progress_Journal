@@ -886,6 +886,7 @@ __Last commits:__
 - "ADD: Implement and test Endpoint for adding new revenue records - POST Request." → Test passed successfully.
 - "ADD: Implement and test Endpoint for fetching records of a specific revenue - GET Request." → Test passed successfully.
 - "ADD: Implement and test Endpoint for deleting a revenue record - DELETE Request." → Test passed successfully.
+- "ADD: Implement and test Endpoint for updating records of a specific revenue - PUT Request." → Test passed successfully.
 
 ### Issues !
 
