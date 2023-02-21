@@ -1108,11 +1108,10 @@ __Resources:__
 - [RBAC with Node.js, JWT, and Sequelize](https://medium.com/@michael.svr/node-js-rest-api-with-rbac-jwt-repository-and-mvc-pattern-part-3-648c7b5a4700)
 
 __Plan:__
-1. Start by reading the Node.js docs and installing Node.js on your computer if you haven't already.
-2. Create a new Node.js project and initialize it with NPM.
-3. Install the required dependencies for the project, including Sequelize and the PostgreSQL driver.
-4. Follow the steps in the "Getting Started with Node.js, Sequelize, and PostgreSQL" tutorial to set up a PostgreSQL database and connect it to a Node.js project using Sequelize.
-5. Test the connection by creating a simple database query.
+1. Start by learning about JWT and how it can be used for authentication and authorization.
+2. Integrate JWT with your Node.js project and use it for authentication.
+3. Implement RBAC with Sequelize by creating a User, Role, and Permission model and their associations as described in the Sequelize Associations resource.
+4. Test the RBAC implementation by creating different user roles and trying to access routes that are restricted to certain roles. Verify that the RBAC implementation is working as expected.
 
 ###Day 3:
 >On the third day, I will focus on refining the RBAC implementation and adding more advanced features. I will also learn about best practices for RBAC and security.
