@@ -1071,7 +1071,7 @@ __Tags:__ #RBAC #NodeJS #Sequelize #BackendDevelopment #RoleBasedAccessControl
 
 __Explanation:__
 
->To complete the project, I must implement RBAC (Role-Based Access Control) with Node.js and Sequelize, an Object-Relational Mapping library. While the project has mentioned these concepts, they have not been fully developed in the Codecademy Back-End Engineer course. Therefore, it is important to thoroughly understand RBAC, Node.js, and Sequelize before beginning the implementation. To ensure the project succeeds, I must master these concepts before moving forward.
+>In order to successfully implement RBAC with Node.js, Sequelize and PostgreSQL for the project, it's crucial to have a comprehensive understanding of these concepts, which are not fully covered in the Codecademy course for Back-End Engineers. Here's a plan to learn how to use various libraries :
 
 ###Day 1:
 >On the first day, I will focus on learning the basics of Sequelize, and PostgreSQL. I will also set up a basic Node.js project and connect it to a PostgreSQL database using Sequelize.
@@ -1084,7 +1084,7 @@ __Topics to cover:__
 __Resources:__
 - [Sequelize Docs](https://sequelize.org/docs/v6/)
 - [PostgreSQL Docs](https://www.postgresql.org/docs/)
-- [Getting Started with Sequelize and PostgreSQL]([Getting Started with Sequelize and PostgreSQL](https://youtu.be/p-yKR7GusqM))
+- [Getting Started with Sequelize and PostgreSQL](https://youtu.be/p-yKR7GusqM)
 - [Node.js Express & PostgreSQL: CRUD Rest APIs example with Sequelize](https://www.bezkoder.com/node-express-sequelize-postgresql/)
 
 __Plan:__
