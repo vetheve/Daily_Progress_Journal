@@ -10,7 +10,7 @@ Daily Progress Journal
 |     |     |1    |2    |[3](#2023-02-03)    |4    |5    |
 |[6](#2023-02-06)    |[7](#2023-02-07)    |[8](#2023-02-08)     |[9](#2023-02-09)   |[10](#2023-02-10)   |11   |12   |
 |[13](#2023-02-13)   |[14](#2023-02-14)   |[15](#2023-02-15)   |[16](#2023-02-16)   |[17](#2023-02-17)   |18   |19   |
-|20   |21   |22   |23   |24   |25   |26   |
+|[20](#2023-02-20)   |21   |22   |23   |24   |25   |26   |
 |27   |28   |     |     |     |     |     |
 
 
@@ -1020,4 +1020,118 @@ Terminal output
 ````
 Status: 404 Not Found
 ````
+
+
+#2023-02-20
+---------------------------------------------------------
+### Courses achievements !
+Daily course achievements goals track.
+
+- Total Progression → __75%__
+
+### Project on going !
+
+__Title:__ Codecademy project: Photo Caption Contest
+
+>The "Photo Caption Contest" project is a component of the Codecademy Back-End Engineer course, which involves creating a backend for a photo caption contest platform. The project objectives include using Git version control, creating documentation using the Swagger API, implementing a database with PostgreSQL and ORM sequelize, integrating existing API endpoints with the database layer, implementing database transactions, deploying the app using Heroku, and optimizing performance using a localized cache. Prerequisites for this project include familiarity with the command line, Git and GitHub, Javascript, Node.js/Express, Postman, database relationships and configuration, Sequelize, and Heroku.
+
+
+- [x] **Define Enpoints**
+- [x] **Define processus of registration and login**
+- Total Progression → __2%__
+
+### Issues !
+
+__Title:__ "Mastering RBAC with Node.js and Sequelize: Key to Successful Project Implementation"
+
+__Tags:__ #RBAC #NodeJS #Sequelize #BackendDevelopment #RoleBasedAccessControl
+
+__Explanation:__
+
+>To complete the project, I must implement RBAC (Role-Based Access Control) with Node.js and Sequelize, an Object-Relational Mapping library. While the project has mentioned these concepts, they have not been fully developed in the Codecademy Back-End Engineer course. Therefore, it is important to thoroughly understand RBAC, Node.js, and Sequelize before beginning the implementation. To ensure the project succeeds, I must master these concepts before moving forward.
+
+#2023-02-21
+---------------------------------------------------------
+
+### Project on going !
+
+__Title:__ Codecademy project: Photo Caption Contest
+
+>
+
+- [x] **Define Enpoints**
+- [x] **Define processus of registration and login**
+- Total Progression → __2%__
+
+### Issues !
+
+__Title:__ "Mastering RBAC with Node.js and Sequelize: Key to Successful Project Implementation"
+
+__Tags:__ #RBAC #NodeJS #Sequelize #BackendDevelopment #RoleBasedAccessControl
+
+__Explanation:__
+
+>To complete the project, I must implement RBAC (Role-Based Access Control) with Node.js and Sequelize, an Object-Relational Mapping library. While the project has mentioned these concepts, they have not been fully developed in the Codecademy Back-End Engineer course. Therefore, it is important to thoroughly understand RBAC, Node.js, and Sequelize before beginning the implementation. To ensure the project succeeds, I must master these concepts before moving forward.
+
+###Day 1:
+>On the first day, I will focus on learning the basics of Sequelize, and PostgreSQL. I will also set up a basic Node.js project and connect it to a PostgreSQL database using Sequelize.
+
+__Topics to cover:__
+- Introduction to Sequelize
+- Setting up a PostgreSQL database
+- Getting Started with Sequelize and PostgreSQL
+
+__Resources:__
+- [Sequelize Docs](https://sequelize.org/docs/v6/)
+- [PostgreSQL Docs](https://www.postgresql.org/docs/)
+- [Getting Started with Sequelize and PostgreSQL]([Getting Started with Sequelize and PostgreSQL](https://youtu.be/p-yKR7GusqM))
+- [Node.js Express & PostgreSQL: CRUD Rest APIs example with Sequelize](https://www.bezkoder.com/node-express-sequelize-postgresql/)
+
+__Plan:__
+1. Start by reading the Node.js docs and installing Node.js on your computer if you haven't already.
+2. Create a new Node.js project and initialize it with NPM.
+3. Install the required dependencies for the project, including Sequelize and the PostgreSQL driver.
+4. Follow the steps in the "Getting Started with Node.js, Sequelize, and PostgreSQL" tutorial to set up a PostgreSQL database and connect it to a Node.js project using Sequelize.
+5. Test the connection by creating a simple database query.
+
+###Day 2:
+>On the second day, I will focus on implementing RBAC with JWT and Sequelize. I will create a basic user authentication system with JWT and then add RBAC functionality to restrict access to certain routes based on the user's role.
+
+__Topics to cover:__
+- Introduction to JSON Web Tokens (JWT)
+- Creating a basic user authentication system with JWT
+- Adding RBAC functionality to restrict access to certain routes based on the user's role
+
+__Resources:__
+- [JWT.io](https://jwt.io/)
+- [Node.js JWT Authentication Tutorial](https://www.section.io/engineering-education/how-to-build-authentication-api-with-jwt-token-in-nodejs/)
+- [RBAC with Node.js, JWT, and Sequelize](https://medium.com/@michael.svr/node-js-rest-api-with-rbac-jwt-repository-and-mvc-pattern-part-3-648c7b5a4700)
+
+__Plan:__
+1. Start by reading the Node.js docs and installing Node.js on your computer if you haven't already.
+2. Create a new Node.js project and initialize it with NPM.
+3. Install the required dependencies for the project, including Sequelize and the PostgreSQL driver.
+4. Follow the steps in the "Getting Started with Node.js, Sequelize, and PostgreSQL" tutorial to set up a PostgreSQL database and connect it to a Node.js project using Sequelize.
+5. Test the connection by creating a simple database query.
+
+###Day 3:
+>On the third day, I will focus on refining the RBAC implementation and adding more advanced features. I will also learn about best practices for RBAC and security.
+
+__Topics to cover:__
+- Refining the RBAC implementation
+- Adding more advanced features, such as dynamic role assignment and resource-based access control
+- Best practices for RBAC and security
+
+__Resources:__
+- [Building Role-Based Access Control in Node.js with JWT and Sequelize](https://soshace.com/implementing-role-based-access-control-in-a-node-js-application/)
+- [Security Best Practices for Node.js]
+
+__Plan:__
+1. Start by reading the "Building Role-Based Access Control in Node.js with JWT and Sequelize" tutorial to learn how to refine your RBAC implementation and add more advanced features, such as dynamic role assignment and resource-based access control.
+2. Test the RBAC implementation by creating different user roles and trying to access routes that are restricted to certain roles. Verify that the RBAC implementation is working as expected.
+3. Follow the "Security Best Practices for Node.js" guide to learn about best practices for securing your Node.js application, including RBAC implementation. 
+4. Implement any recommended security measures that are relevant to your project.
+5. Review your code and ensure that it follows best practices for security and RBAC implementation.
+6. Document your RBAC implementation and security measures for future reference.
+
 **Happy reporting !**
