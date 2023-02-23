@@ -1133,6 +1133,10 @@ __Plan:__
 #2023-02-23
 ---------------------------------------------------------
 
+### Project on going !
+
+__Title:__ Codecademy project: Photo Caption Contest
+
 - [x] **Plan the project**
 - [x] **Define endpoints**
 - [x] **Setup the environment**
