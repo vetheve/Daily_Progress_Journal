@@ -1073,8 +1073,8 @@ __Explanation:__
 
 >In order to successfully implement RBAC with Node.js, Sequelize and PostgreSQL for the project, it's crucial to have a comprehensive understanding of these concepts, which are not fully covered in the Codecademy course for Back-End Engineers. Here's a plan to learn how to use various libraries :
 
-###Day 1:
->On the first day, I will focus on learning the basics of Sequelize, and PostgreSQL. I will also set up a basic Node.js project and connect it to a PostgreSQL database using Sequelize.
+###Step 1:
+>On the first step, I will focus on learning the basics of Sequelize, and PostgreSQL. I will also set up a basic Node.js project and connect it to a PostgreSQL database using Sequelize.
 
 __Topics to cover:__
 - Introduction to Sequelize
@@ -1088,14 +1088,12 @@ __Resources:__
 - [Node.js Express & PostgreSQL: CRUD Rest APIs example with Sequelize](https://www.bezkoder.com/node-express-sequelize-postgresql/)
 
 __Plan:__
-1. Start by reading the Node.js docs and installing Node.js on your computer if you haven't already.
-2. Create a new Node.js project and initialize it with NPM.
-3. Install the required dependencies for the project, including Sequelize and the PostgreSQL driver.
-4. Follow the steps in the "Getting Started with Node.js, Sequelize, and PostgreSQL" tutorial to set up a PostgreSQL database and connect it to a Node.js project using Sequelize.
-5. Test the connection by creating a simple database query.
+1. Install the required dependencies for the project, including Sequelize and the PostgreSQL driver.
+2. Follow the steps in the "Getting Started with Node.js, Sequelize, and PostgreSQL" tutorial to set up a PostgreSQL database and connect it to a Node.js project using Sequelize.
+3. Test the connection by creating a simple database query.
 
-###Day 2:
->On the second day, I will focus on implementing RBAC with JWT and Sequelize. I will create a basic user authentication system with JWT and then add RBAC functionality to restrict access to certain routes based on the user's role.
+###Step 2:
+>On the second step, I will focus on implementing RBAC with JWT and Sequelize. I will create a basic user authentication system with JWT and then add RBAC functionality to restrict access to certain routes based on the user's role.
 
 __Topics to cover:__
 - Introduction to JSON Web Tokens (JWT)
@@ -1113,8 +1111,8 @@ __Plan:__
 3. Implement RBAC with Sequelize by creating a User, Role, and Permission model and their associations as described in the Sequelize Associations resource.
 4. Test the RBAC implementation by creating different user roles and trying to access routes that are restricted to certain roles. Verify that the RBAC implementation is working as expected.
 
-###Day 3:
->On the third day, I will focus on refining the RBAC implementation and adding more advanced features. I will also learn about best practices for RBAC and security.
+###Step 3:
+>On the third step, I will focus on refining the RBAC implementation and adding more advanced features. I will also learn about best practices for RBAC and security.
 
 __Topics to cover:__
 - Refining the RBAC implementation
