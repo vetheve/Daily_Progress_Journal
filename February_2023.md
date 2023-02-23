@@ -1140,15 +1140,14 @@ __Title:__ Codecademy project: Photo Caption Contest
 - [x] **Plan the project**
 - [x] **Define endpoints**
 - [x] **Setup the environment**
-- [ ] **Create the models**   → *In progress*
+- [ ] **Create the models** → *In progress*
 - [ ] **Create the controllers**
-- [ ] **Create the routes**
 - [ ] **Create the auth middleware to specific endpoints**
+- [ ] **Create the routes**
 - [ ] **Test the endpoints**
 - [ ] **Configure localized caching**
 - [ ] **Write a swagger documentation**
-
-- Total Progression → __20%__
+- Total Progression → __15%__
 
 ### Issues !
 
@@ -1201,4 +1200,58 @@ database_development=# \d+
 (3 rows)
 ````
 
+### Issues !
+
+__Title:__ "Issue with Sequelize ORM when inserting a new caption record"
+
+__Tags:__ #SequelizeORM #NodeJS #PostgreSQL #Database #InsertionIssue
+
+__StackOverflow:__ [link](https://stackoverflow.com/questions/75544854/issue-with-sequelize-orm-when-inserting-a-new-record-in-table-postgresql)
+
+__Explanation:__
+
+>When I try to insert a new record in the Captions table, the promise returns <pending> and nothing is inserted in the table. However, when I log the returned object, I can see that the Caption object has been created with all the required attributes.
+
+Here is the code I am using to insert the record:
+````
+const newCaption = await Caption.create({
+  ulid_id: 'qdslf,lkqsdnlksvd',
+  text: 'djfbsdkjfbqlksjdcnbkqjsdnc'
+});
+
+console.log(newCaption);
+
+````
+Terminal output :     
+````
+Promise { <pending> }
+Executing (default): INSERT INTO "Captions" ("ulid_id","text","createdAt","updatedAt") VALUES ($1,$2,$3,$4) RETURNING "ulid_id","text","createdAt","updatedAt";
+Caption {
+  dataValues: {
+    ulid_id: 'qdslf,lkqsdnlksvd',
+    text: 'djfbsdkjfbqlksjdcnbkqjsdnc',
+    updatedAt: 2023-02-23T11:30:16.720Z,
+    createdAt: 2023-02-23T11:30:16.720Z
+  },
+  _previousDataValues: {
+    ulid_id: 'qdslf,lkqsdnlksvd',
+    text: 'djfbsdkjfbqlksjdcnbkqjsdnc',
+    createdAt: 2023-02-23T11:30:16.720Z,
+    updatedAt: 2023-02-23T11:30:16.720Z
+  },
+  uniqno: 1,
+  _changed: Set(0) {},
+  _options: {
+    isNewRecord: true,
+    _schema: null,
+    _schemaDelimiter: '',
+    attributes: undefined,
+    include: undefined,
+    raw: undefined,
+    silent: undefined
+  },
+  isNewRecord: false
+}
+
+````
 **Happy reporting !**
