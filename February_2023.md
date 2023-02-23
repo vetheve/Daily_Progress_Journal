@@ -1154,11 +1154,11 @@ __Tags:__ #RBAC #NodeJS #Sequelize #BackendDevelopment #RoleBasedAccessControl
 
 __Explanation:__
 
->The terminal output shows that a migration script was executed to create a table named 'Users' in the 'database_development' database. However, when attempting to query the table using SELECT * FROM Users, the error message "relation 'Users' does not exist" was returned. The same error message was returned when attempting to query the table using SELECT * FROM users.
+>The terminal output shows that a migration script was executed to create a table named 'Users' in the 'database_development' database. However, when attempting to query the table using `SELECT * FROM Users`, the error message "relation 'Users' does not exist" was returned. The same error message was returned when attempting to query the table using `SELECT * FROM users`.
 >
 >The issue is likely due to the fact that the 'sequelize' ORM (Object-Relational Mapping) tool named the table 'Users' with an uppercase 'U', but PostgreSQL is case-sensitive and expects the table name to be in lowercase letters. Therefore, the table was not found when queried in uppercase or lowercase.
 >
->To fix this issue, the migration needs to be undone with the command npx sequelize-cli db:migrate:undo --name 20230223064615-create-user.js, and the migration file '20230223064615-create-user.js' needs to be modified to name the table as 'users' instead of 'Users'. Then, the migration needs to be re-run with the command npx sequelize-cli db:migrate to create the 'users' table in the database.
+>To fix this issue, the migration needs to be undone with the command `npx sequelize-cli db:migrate:undo --name 20230223064615-create-user.js`, and the migration file '20230223064615-create-user.js' needs to be modified to name the table as 'users' instead of 'Users'. Then, the migration needs to be re-run with the command npx sequelize-cli db:migrate to create the 'users' table in the database.
 
 Terminal output :
 ````
