@@ -1140,7 +1140,7 @@ __Title:__ Codecademy project: Photo Caption Contest
 - [x] **Plan the project**
 - [x] **Define endpoints**
 - [x] **Setup the environment**
-- [ ] **Create the models**  → *In progress*
+- [ ] **Create the models**   → *In progress*
 - [ ] **Create the controllers**
 - [ ] **Create the routes**
 - [ ] **Create the auth middleware to specific endpoints**
