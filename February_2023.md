@@ -1148,9 +1148,9 @@ __Plan:__
 
 ### Issues !
 
-__Title:__ #PostgreSQL #Sequelize #migration #tablecase #error
+__Title:__ "PostgreSQL error: relation does not exist, even though table exists in Sequelize migration with uppercase table name"
 
-__Tags:__ #RBAC #NodeJS #Sequelize #BackendDevelopment #RoleBasedAccessControl
+__Tags:__ #PostgreSQL #Sequelize #migration #tablecase #error
 
 __Explanation:__
 
