@@ -10,7 +10,7 @@ Daily Progress Journal
 |     |     |1    |2    |[3](#2023-02-03)    |4    |5    |
 |[6](#2023-02-06)    |[7](#2023-02-07)    |[8](#2023-02-08)     |[9](#2023-02-09)   |[10](#2023-02-10)   |11   |12   |
 |[13](#2023-02-13)   |[14](#2023-02-14)   |[15](#2023-02-15)   |[16](#2023-02-16)   |[17](#2023-02-17)   |18   |19   |
-|[20](#2023-02-20)   |[21](#2023-02-21)   |22   |23   |24   |25   |26   |
+|[20](#2023-02-20)   |[21](#2023-02-21)   |22   |[23](#2023-02-23)   |24   |25   |26   |
 |27   |28   |     |     |     |     |     |
 
 
@@ -1057,8 +1057,6 @@ __Explanation:__
 
 __Title:__ Codecademy project: Photo Caption Contest
 
->
-
 - [x] **Define Enpoints**
 - [x] **Define processus of registration and login**
 - Total Progression → __2%__
@@ -1130,5 +1128,73 @@ __Plan:__
 4. Implement any recommended security measures that are relevant to your project.
 5. Review your code and ensure that it follows best practices for security and RBAC implementation.
 6. Document your RBAC implementation and security measures for future reference.
+
+
+#2023-02-23
+---------------------------------------------------------
+
+- [x] **Plan the project**
+- [x] **Define endpoints**
+- [x] **Setup the environment**
+- [ ] **Create the models**  → *In progress*
+- [ ] **Create the controllers**
+- [ ] **Create the routes**
+- [ ] **Create the auth middleware to specific endpoints**
+- [ ] **Test the endpoints**
+- [ ] **Configure localized caching**
+- [ ] **Write a swagger documentation**
+
+- Total Progression → __20%__
+
+### Issues !
+
+__Title:__ #PostgreSQL #Sequelize #migration #tablecase #error
+
+__Tags:__ #RBAC #NodeJS #Sequelize #BackendDevelopment #RoleBasedAccessControl
+
+__Explanation:__
+
+>The terminal output shows that a migration script was executed to create a table named 'Users' in the 'database_development' database. However, when attempting to query the table using SELECT * FROM Users, the error message "relation 'Users' does not exist" was returned. The same error message was returned when attempting to query the table using SELECT * FROM users.
+>
+>The issue is likely due to the fact that the 'sequelize' ORM (Object-Relational Mapping) tool named the table 'Users' with an uppercase 'U', but PostgreSQL is case-sensitive and expects the table name to be in lowercase letters. Therefore, the table was not found when queried in uppercase or lowercase.
+>
+>To fix this issue, the migration needs to be undone with the command npx sequelize-cli db:migrate:undo --name 20230223064615-create-user.js, and the migration file '20230223064615-create-user.js' needs to be modified to name the table as 'users' instead of 'Users'. Then, the migration needs to be re-run with the command npx sequelize-cli db:migrate to create the 'users' table in the database.
+
+Terminal output :
+````
+postgres=# \c database_development
+You are now connected to database "database_development" as user "postgres".
+database_development=# \dt
+             List of relations
+ Schema |     Name      | Type  |  Owner   
+--------+---------------+-------+----------
+ public | SequelizeMeta | table | postgres
+ public | Users         | table | postgres
+(2 rows)
+
+database_development=# SELECT * FROM Users;
+ERROR:  relation "users" does not exist
+LINE 1: SELECT * FROM Users;
+                      ^
+database_development=# SELECT * FROM users;
+ERROR:  relation "users" does not exist
+LINE 1: SELECT * FROM users;
+                      ^
+database_development=# \dn
+ List of schemas
+  Name  | Owner  
+--------+--------
+ public | gitpod
+(1 row)
+
+database_development=# \d+
+                            List of relations
+ Schema |     Name      |   Type   |  Owner   |    Size    | Description 
+--------+---------------+----------+----------+------------+-------------
+ public | SequelizeMeta | table    | postgres | 8192 bytes | 
+ public | Users         | table    | postgres | 8192 bytes | 
+ public | Users_id_seq  | sequence | postgres | 8192 bytes | 
+(3 rows)
+````
 
 **Happy reporting !**
