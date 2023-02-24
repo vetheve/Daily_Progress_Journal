@@ -1301,6 +1301,7 @@ __Title:__ Codecademy project: Photo Caption Contest
 - [ ] **Configure localized caching**
 - [ ] **Write a swagger documentation**
 - Total Progression → __15%__
+    
 __Last commits:__
     
 - "FIX: Fix verbose - table name". 
