@@ -10,7 +10,7 @@ Daily Progress Journal
 |     |     |1    |2    |[3](#2023-02-03)    |4    |5    |
 |[6](#2023-02-06)    |[7](#2023-02-07)    |[8](#2023-02-08)     |[9](#2023-02-09)   |[10](#2023-02-10)   |11   |12   |
 |[13](#2023-02-13)   |[14](#2023-02-14)   |[15](#2023-02-15)   |[16](#2023-02-16)   |[17](#2023-02-17)   |18   |19   |
-|[20](#2023-02-20)   |[21](#2023-02-21)   |22   |[23](#2023-02-23)   |24   |25   |26   |
+|[20](#2023-02-20)   |[21](#2023-02-21)   |22   |[23](#2023-02-23)   |[24](#2023-02-24)   |25   |26   |
 |27   |28   |     |     |     |     |     |
 
 
@@ -1027,7 +1027,7 @@ Status: 404 Not Found
 ### Courses achievements !
 Daily course achievements goals track.
 
-- Total Progression → __75%__
+- Total Progression → __80%__
 
 ### Project on going !
 
@@ -1052,6 +1052,11 @@ __Explanation:__
 
 #2023-02-21
 ---------------------------------------------------------
+
+### Courses achievements !
+Daily course achievements goals track.
+
+- Total Progression → __80%__
 
 ### Project on going !
 
@@ -1133,6 +1138,11 @@ __Plan:__
 #2023-02-23
 ---------------------------------------------------------
 
+### Courses achievements !
+Daily course achievements goals track.
+
+- Total Progression → __80%__
+
 ### Project on going !
 
 __Title:__ Codecademy project: Photo Caption Contest
@@ -1148,6 +1158,19 @@ __Title:__ Codecademy project: Photo Caption Contest
 - [ ] **Configure localized caching**
 - [ ] **Write a swagger documentation**
 - Total Progression → __15%__
+
+__Last commits:__
+
+- "ADD: .gitpod.yml file with environment setup".
+- "SETUP: environment setup".
+- "SETUP : environment setup bcrypt jsonwebtoken dotenv".
+- "SETUP: environment setup with npx sequelize-cli init".
+- "ADD: models/user.js".
+- "UPDATE: config/config.json".
+- "ADD: create photo.js and user.js".
+- "ADD: Create caption.js".
+- "Merge remote-tracking branch 'refs/remotes/origin/main'"
+- "UPDATE: models".
 
 ### Issues !
 
@@ -1254,4 +1277,36 @@ Caption {
 }
 
 ````
+    
+#2023-02-24
+---------------------------------------------------------
+    
+### Courses achievements !
+Daily course achievements goals track.
+
+- Total Progression → __80%__
+
+### Project on going !
+
+__Title:__ Codecademy project: Photo Caption Contest
+
+- [x] **Plan the project**
+- [x] **Define endpoints**
+- [x] **Setup the environment**
+- [ ] **Create the models** → *In progress*
+- [ ] **Create the controllers**
+- [ ] **Create the auth middleware to specific endpoints**
+- [ ] **Create the routes**
+- [ ] **Test the endpoints**
+- [ ] **Configure localized caching**
+- [ ] **Write a swagger documentation**
+- Total Progression → __15%__
+__Last commits:__
+    
+- "FIX: Fix verbose - table name". 
+- "ADD: Add validation and error handling in Sequelize User model" → Test passed successfully.
+- "ADD: Add validation and error handling in Sequelize Caption model" → Test passed successfully.
+- "ADD: Add validation and error handling in Sequelize Photo model" → Test passed successfully.
+- "ADD: Add validation and error handling in Sequelize Vote model" → Test passed successfully.
+    
 **Happy reporting !**
