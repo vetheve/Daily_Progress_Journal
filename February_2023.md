@@ -1309,5 +1309,6 @@ __Last commits:__
 - "ADD: Add validation and error handling in Sequelize Caption model" → Test passed successfully.
 - "ADD: Add validation and error handling in Sequelize Photo model" → Test passed successfully.
 - "ADD: Add validation and error handling in Sequelize Vote model" → Test passed successfully.
+- "FIX: Fix issue with table association between Votes and Users" → Test passed successfully. 
     
 **Happy reporting !**
