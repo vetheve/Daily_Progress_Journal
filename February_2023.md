@@ -1305,10 +1305,11 @@ __Title:__ Codecademy project: Photo Caption Contest
 __Last commits:__
     
 - "FIX: Fix verbose - table name". 
-- "ADD: Add validation and error handling in Sequelize User model" → Test passed successfully.
+- "ADD: Add validation and error handling in Sequelize User model" → Test passed successfully. (implemented bcryt to hash password)
 - "ADD: Add validation and error handling in Sequelize Caption model" → Test passed successfully.
 - "ADD: Add validation and error handling in Sequelize Photo model" → Test passed successfully.
 - "ADD: Add validation and error handling in Sequelize Vote model" → Test passed successfully.
 - "FIX: Fix issue with table association between Votes and Users" → Test passed successfully. 
+- "ADD: Association of User and Photo models"
     
 **Happy reporting !**
