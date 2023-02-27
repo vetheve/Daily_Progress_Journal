@@ -1294,6 +1294,7 @@ __Title:__ Codecademy project: Photo Caption Contest
 - [x] **Define endpoints**
 - [x] **Setup the environment**
 - [ ] **Create the models** → *In progress*
+- [ ] **Create the seeders**
 - [ ] **Create the controllers**
 - [ ] **Create the auth middleware to specific endpoints**
 - [ ] **Create the routes**
@@ -1329,6 +1330,7 @@ __Title:__ Codecademy project: Photo Caption Contest
 - [x] **Define endpoints**
 - [x] **Setup the environment**
 - [x] **Create the models**
+- [x] **Create the seeders**
 - [ ] **Create the controllers** → *In progress*
 - [ ] **Create the auth middleware to specific endpoints**
 - [ ] **Create the routes**
@@ -1340,5 +1342,6 @@ __Title:__ Codecademy project: Photo Caption Contest
 __Last commits:__
 
 - "ADD: Association of Vote and Photo models" → Test passed successfully.
+- "FEAT: Create seeders codes for generating random values for the database".
 
 **Happy reporting !**
