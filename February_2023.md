@@ -1374,5 +1374,226 @@ __Title:__ Codecademy project: Photo Caption Contest
 __Last commits:__
 
 - "FEAT: registerNewUser creates a new user in the database and returns a JWT token" → Test failed successfully.
+    
+### Issues !
+
+__Title:__ "How to Fix the Failed RegisterNewUser Test Case in AuthController.js ?"
+
+__Tags:__ #AVATests #JWT #APIs #NodeJS #Debugging
+
+__Explanation:__
+    
+>The test output shows that Test Case 1 failed. The test case is checking if the registerNewUser function in authcontroller.js creates a new user in the database and returns a JWT token.
+>
+The test output shows that the expected HTTP response status code is 201, but the actual status code returned is 400. Therefore, the test failed.
+>
+>The registerNewUser function creates a new user in the database and returns a JWT token in the response body. If an error occurs during the registration process, it returns an error message with an HTTP status code of 400.
+>
+>In this case, an error has occurred during the registration process, which is causing the catch block to execute. The error message is being returned to the client with an HTTP status code of 400.
+>
+>To fix the test, I need to identify the cause of the error during the registration process and fix it. Once the error is fixed, the registerNewUser function should be able to create a new user in the database and return a JWT token with an HTTP status code of 201.
+    
+Terminal output :
+````
+gitpod /workspace/Codecademy_project-Photo_Caption_Contest (main) $ npm test tests/register/registercontroller.js
+
+> test
+> ava tests/register/registercontroller.js
+
+
+  ✔ 2. registerNewUser returns an error message if an error occurs during the registration process
+    ℹ {
+        args: [
+          400,
+        ],
+        callId: 2,
+        callback: undefined,
+        errorWithCallStack: Error {
+          message: '',
+        },
+        exception: undefined,
+        firstArg: 400,
+        lastArg: 400,
+        proxy: Function functionStub {},
+        returnValue: {
+          json: Function {},
+        },
+        thisValue: {
+          status: Function functionStub {},
+        },
+      }
+  ✘ [fail]: 1. registerNewUser creates a new user in the database and returns a JWT token
+    ℹ {
+        email: 'testuser@example.com',
+        password: 'password123',
+        username: 'testuser',
+      }
+    ℹ {
+        id: 1,
+      }
+    ℹ testsecret
+  ─
+
+  1. registerNewUser creates a new user in the database and returns a JWT token
+  tests/register/registercontroller.js:66
+
+   65:     // Assert that the response was sent with the correct status code and token
+   66:     t.is(res.status.getCall(0).args[0], 201);                                  
+   67:     t.truthy(res.status().json.getCall(0).args[0].token);                      
+
+  Difference (- actual, + expected):
+
+  - 400
+  + 201
+
+  › tests/register/registercontroller.js:66:7
+
+  ─
+
+  1 test failed
+````
+
+/workspace/Codecademy_project-Photo_Caption_Contest/controllers/authcontroller.js
+````
+// Importing the User model from the index file in the models directory
+const { 
+    User 
+} = require('../models/index.js'); 
+
+// Importing the JSON web token package
+const jwt = require('jsonwebtoken');
+
+// Getting the secret key for the JSON web token from the environment variables
+const secret = 'testsecret';
+
+// Function to register a new user
+exports.registerNewUser = async (req, res) => {
+
+    // Extracting the required fields from the request body
+    const {
+        username,
+        email,
+        password
+    } = req.body;
+
+    try {
+        // Creating a new user in the database
+        const user = await User.create({
+            username,
+            email,
+            password
+        });
+
+        // Creating a JSON web token using the user's ID and the secret key
+        const token = jwt.sign({
+            id: user.id
+        }, secret);
+
+        // Returning the token to the client
+        res.status(201).json({
+            token
+        });
+    } catch (error) {
+        // If an error occurs during the registration process, returning the error message to the client
+        console.log(error.message);
+        res.status(400).json({
+            error: error.message
+        });
+    }
+};
+
+````
+
+/workspace/Codecademy_project-Photo_Caption_Contest/tests/register/registercontroller.js
+````
+// Import necessary libraries and dependencies
+const test = require('ava'); // Test runner library
+const sinon = require('sinon'); // Test spies, stubs, and mocks library
+const jwt = require('jsonwebtoken'); // Library to generate and verify JSON Web Tokens
+const { 
+    User 
+} = require('../../models/index.js'); // User model from the application
+
+// Import the function to be tested
+const {
+    registerNewUser
+} = require('../../controllers/authcontroller.js');
+
+// Import the secret key for the JSON web token from the authcontroller module
+const secret = 'testsecret';
+
+// Mock data for the request and response objects
+const req = {
+    body: {
+        username: 'testuser',
+        email: 'testuser@example.com',
+        password: 'password123'
+    }
+};
+
+const res = {
+    status: sinon.stub().returns({
+        json: sinon.spy()
+    })
+};
+
+// Mock User model's create method
+User.create = sinon.stub().returns({
+    id: 1
+});
+
+// Mock JWT's sign method
+jwt.sign = sinon.stub().returns({
+    json: sinon.spy()
+});
+
+// Test Case 1: Test that registerNewUser creates a new user in the database and returns a JWT token
+test('1. registerNewUser creates a new user in the database and returns a JWT token', async (t) => {
+    // Call the function with the mock request and response objects
+    await registerNewUser(req, res);
+
+    // Assert that User.create was called with the correct parameters
+    t.deepEqual(User.create.getCall(0).args[0], {
+        username: 'testuser',
+        email: 'testuser@example.com',
+        password: 'password123'
+    });
+
+    // Print the object in the console
+    t.log(User.create.getCall(0).args[0]);
+    t.log(jwt.sign.getCall(0).args[0]);
+
+    // Assert that JWT.sign was called with the correct parameters
+    t.deepEqual(jwt.sign.getCall(0).args[0], {
+        id: 1
+    });
+    t.is(jwt.sign.getCall(0).args[1], secret);
+    t.log(jwt.sign.getCall(0).args[1]);
+
+    // Assert that the response was sent with the correct status code and token
+    t.is(res.status.getCall(0).args[0], 201);
+    t.truthy(res.status().json.getCall(0).args[0].token);
+});
+
+// Test Case 2: Test that registerNewUser returns an error message if an error occurs during the registration process
+test('2. registerNewUser returns an error message if an error occurs during the registration process', async (t) => {
+    // Mock User.create to throw an error
+    User.create = sinon.stub().throws(new Error('Database error'));
+
+    // Call the function with the mock request and response objects
+    await registerNewUser(req, res);
+
+    // Print the object in the console
+    t.log(res.status.getCall(0));
+
+    // Assert that the response was sent with the correct status code and error message
+    t.is(res.status.getCall(0).args[0], 400);
+    t.deepEqual(res.status().json.getCall(0).args[0], {
+        error: 'Database error'
+    });
+});
+````
+
+
 
 **Happy reporting !**
