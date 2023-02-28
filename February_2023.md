@@ -1385,7 +1385,7 @@ __Explanation:__
     
 >The test output shows that Test Case 1 failed. The test case is checking if the registerNewUser function in authcontroller.js creates a new user in the database and returns a JWT token.
 >
-The test output shows that the expected HTTP response status code is 201, but the actual status code returned is 400. Therefore, the test failed.
+>The test output shows that the expected HTTP response status code is 201, but the actual status code returned is 400. Therefore, the test failed.
 >
 >The registerNewUser function creates a new user in the database and returns a JWT token in the response body. If an error occurs during the registration process, it returns an error message with an HTTP status code of 400.
 >
