@@ -11,7 +11,7 @@ Daily Progress Journal
 |[6](#2023-02-06)    |[7](#2023-02-07)    |[8](#2023-02-08)     |[9](#2023-02-09)   |[10](#2023-02-10)   |11   |12   |
 |[13](#2023-02-13)   |[14](#2023-02-14)   |[15](#2023-02-15)   |[16](#2023-02-16)   |[17](#2023-02-17)   |18   |19   |
 |[20](#2023-02-20)   |[21](#2023-02-21)   |22   |[23](#2023-02-23)   |[24](#2023-02-24)   |25   |26   |
-|[27](#2023-02-27)   |28   |     |     |     |     |     |
+|[27](#2023-02-27)   |[28](#2023-02-28)   |     |     |     |     |     |
 
 
 
@@ -1344,5 +1344,35 @@ __Last commits:__
 
 - "ADD: Association of Vote and Photo models" → Test passed successfully.
 - "FEAT: Create seeders codes for generating random values for the database".
+
+#2023-02-28
+---------------------------------------------------------
+    
+### Codecademy Back-End Engineer courses achievements !
+Daily course achievements goals track.
+
+- [ ] *Linear Data structure** → *In progress*
+- Total Progression → __80%__
+
+### Project on going !
+
+__Title:__ Codecademy project: Photo Caption Contest
+
+- [x] **Plan the project**
+- [x] **Define endpoints**
+- [x] **Setup the environment**
+- [x] **Create the models**
+- [x] **Create the seeders**
+- [ ] **Create the controllers** → *In progress*
+- [ ] **Create the auth middleware to specific endpoints**
+- [ ] **Create the routes**
+- [ ] **Test the endpoints**
+- [ ] **Configure localized caching**
+- [ ] **Write a swagger documentation**
+- Total Progression → __30%__
+
+__Last commits:__
+
+- "FEAT: registerNewUser creates a new user in the database and returns a JWT token" → Test failed successfully.
 
 **Happy reporting !**
