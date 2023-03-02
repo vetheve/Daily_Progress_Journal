@@ -22,13 +22,13 @@ Daily Progress Journal
 ### Codecademy Back-End Engineer courses achievements !
 Daily course achievements goals track.
 
-- [x] *Linear Data structure: Introduction**
-- [x] *Linear Data structure: Data sctructures** → *In progress*
-- [ ] *Linear Data structure: Nodes**
-- [ ] *Linear Data structure: Singly Linked Lists**
-- [ ] *Linear Data structure: Doubly Linked Lists**
-- [ ] *Linear Data structure: Queues**
-- [ ] *Linear Data structure: Stacks**
+- [x] **Linear Data structure: Introduction**
+- [x] **Linear Data structure: Data sctructures** → *In progress*
+- [ ] **Linear Data structure: Nodes**
+- [ ] **Linear Data structure: Singly Linked Lists**
+- [ ] **Linear Data structure: Doubly Linked Lists**
+- [ ] **Linear Data structure: Queues**
+- [ ] **Linear Data structure: Stacks**
 - Total Progression → __80%__
 
 ### Project on going !
@@ -233,13 +233,13 @@ test('register new user', async (t) => {
 ### Codecademy Back-End Engineer courses achievements !
 Daily course achievements goals track.
 
-- [x] *Linear Data structure: Introduction**
-- [x] *Linear Data structure: Data sctructures**
-- [x] *Linear Data structure: Nodes**
-- [ ] *Linear Data structure: Singly Linked Lists** → *In progress*
-- [ ] *Linear Data structure: Doubly Linked Lists**
-- [ ] *Linear Data structure: Queues**
-- [ ] *Linear Data structure: Stacks**
+- [x] **Linear Data structure: Introduction**
+- [x] **Linear Data structure: Data sctructures**
+- [x] **Linear Data structure: Nodes**
+- [ ] **Linear Data structure: Singly Linked Lists** → *In progress*
+- [ ] **Linear Data structure: Doubly Linked Lists**
+- [ ] **Linear Data structure: Queues**
+- [ ] **Linear Data structure: Stacks**
 - Total Progression → __80%__
 
 ### Project on going !
@@ -258,3 +258,32 @@ __Title:__ Codecademy project: Photo Caption Contest
 - [ ] **Configure localized caching**
 - [ ] **Write a swagger documentation**
 - Total Progression → __30%__
+
+### Issues !
+
+__Title:__ "How to Fix the Failed RegisterNewUser Test Case in AuthController.js ?"
+
+__Tags:__ #AVATests #JWT #APIs #NodeJS #Debugging
+
+__Explanation:__
+
+>1. When I spoke with Thomas on Tuesday night, he advised me not to use a Mock test to evaluate how well the registration of a new user in our "authController" works. At this point, it would be too complicated and unnecessary to use a Mock test for this task. Instead, he suggested that I should create a route for this functionality and test how the route and the "authController" interact. 
+>
+>2. Which I did on Wednesday, so I created the route I needed to perform one of the most basic tests. This test that checks the functionality of registering a new user in an application. The test utilizes the 'ava' testing library and 'supertest' to make an HTTP POST request to the application with test data such as username, email, and password. The test checks that the HTTP response returned by the application is a 201 status code, which indicates that the request was successful. It then extracts an access token from the HTTP response body and decodes it using the 'jsonwebtoken' library to verify that the token is valid. The test also verifies that the user was successfully added to the database by retrieving the user using the 'User' model and checking that the email of the user matches the email sent in the request. Finally, the test uses the 'plan' method of the 'ava' library to ensure that all three assertions of the test have been executed successfully.
+>
+>3.But after running the test, the output shoeds that a test case named register new user failed in the file tests/register/registerTest.js on line 19. The test case was expecting a status code of 201 but received a status code of 500. This could mean that there is an issue with the server and it is not properly responding to the request. It could also mean that the test case itself is incorrect. However, the output also shows that the user was successfully created in the database.It is possible that the server is functioning correctly, and the problem may be related to the test case. Initially, I suspected that I was not using the JWT library correctly, but when I tried to print the error and environment variables to the console, they appeared as undefined values.
+>
+>Thomas recommended that I update the 'package.json' file with the following code snippet in order to ensure that the 'dotenv' library is utilized by AVA when running tests:
+
+json
+````
+"scripts": {
+  "test": "ava --require dotenv/config"
+}
+````
+
+>This will allow the tests to access environment variables defined in a '.env' file, which will enable the tests to be executed successfully.
+
+>When I run tests and use console.log to display environment variables within a function, the variables are correctly displayed in the terminal output. However, when I attempt to reference these variables outside of the function, such as when assigning them to a variable or printing them using console.log, they appear as undefined values. This behavior is unexpected and appears to be strange.
+>
+>4. Thomas recommended that I review my code again, and he pointed out that he did not see the use of the Express library and middleware in my test case, as I had used in my previous project. It is possible that in my attempt to simplify the process of writing and defining routes, I may have inadvertently made the API's functioning more complex.
