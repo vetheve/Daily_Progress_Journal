@@ -431,7 +431,8 @@ __Title:__ Codecademy project: Photo Caption Contest
 __Last commits:__
 
 - "FEAT: Test route '/users' and getUserById controller" → Test passed successfully
-
+- "FEAT: add updateUser controller"
+- "FIX: Bug on hashed password for updateUser controller" → Test passed successfully
 
 ### Issues !
 
@@ -570,4 +571,88 @@ database_test=# SELECT password FROM "Users" WHERE username = 'Vegeta';
  Carambar
 ````
 
+>Based on the information in the code provided, I can tell you that I encountered a bug while working on the updateUser controller. I managed to fix the bug but unfortunately, I encountered another issue. I violated the constraint of the "password" argument in the "user" model. To resolve this issue and update the password without any problem, I needed to adjust the maximum number of characters allowed in the password constraint to match the maximum size of bytes of a hashed password length.
 
+/workspace/Codecademy_project-Photo_Caption_Contest/controllers/userController.js
+````
+        // If user is not found, return a 404 response
+        if (!user) {
+            return res.status(404).json({
+                error: 'User not found',
+            });
+        } else {
+            // Update the user instance with the request body
+            if (password) {
+                hashedPassword = await bcrypt.hash(password, 10); // hash password if present in req.body
+                await user.update({ password: hashedPassword}, {
+                    where: {
+                        uuid: req.params.uuid
+                    }
+                })  
+            } else {
+                await user.update(rest, {
+                    where: {
+                        uuid: req.params.uuid
+                    }
+                })    
+            };
+
+````
+
+
+Terminal output:
+````
+$ npm test tests/user/updateUserTest.js
+
+> test
+> ava --require dotenv/config tests/user/updateUserTest.js
+
+
+Executing (default): SELECT "uuid", "username", "email", "password", "createdAt", "updatedAt" FROM "Users" AS "User" WHERE "User"."uuid" = '11f8d972-994e-4830-9a1b-112710eea2d7';
+ValidationError [SequelizeValidationError]: Validation error: Password must be between 8 and 20 characters long
+    at InstanceValidator._validate (/workspace/Codecademy_project-Photo_Caption_Contest/node_modules/sequelize/src/instance-validator.js:78:13)
+    at InstanceValidator._validateAndRunHooks (/workspace/Codecademy_project-Photo_Caption_Contest/node_modules/sequelize/src/instance-validator.js:111:7)
+    at InstanceValidator.validate (/workspace/Codecademy_project-Photo_Caption_Contest/node_modules/sequelize/src/instance-validator.js:93:12)
+    at User.save (/workspace/Codecademy_project-Photo_Caption_Contest/node_modules/sequelize/src/model.js:3996:7)
+    at User.update (/workspace/Codecademy_project-Photo_Caption_Contest/node_modules/sequelize/src/model.js:4253:12)
+    at async exports.updateUser (/workspace/Codecademy_project-Photo_Caption_Contest/controllers/userController.js:112:17) {
+  errors: [
+    ValidationErrorItem {
+      message: 'Password must be between 8 and 20 characters long',
+      type: 'Validation error',
+      path: 'password',
+      value: '$2b$10$4bscbIr0NNxw8Z3MOcaCPueaC2pPqE/ytoT44BNzWMvJGr7Zn19Ry',
+      origin: 'FUNCTION',
+      instance: [User],
+      validatorKey: 'len',
+      validatorName: 'len',
+      validatorArgs: [Array],
+      original: [Error]
+    }
+  ]
+}
+{
+  error: 'Validation error: Password must be between 8 and 20 characters long'
+}
+  ✘ [fail]: 1. updateUser function should retrieve a user by uuid and update the password
+  ─
+
+  1. updateUser function should retrieve a user by uuid and update the password
+
+  tests/user/updateUserTest.js:28
+
+   27:     // Asserting that the status code of the response is 200
+   28:     t.is(res.status, 200);                                  
+   29:                                                             
+
+  Difference (- actual, + expected):
+
+  - 500
+  + 200
+
+  › tests/user/updateUserTest.js:28:7
+
+  ─
+
+  1 test failed
+````
