@@ -395,3 +395,39 @@ npm test tests/user/getUserByIdTest.js
 
   1 test passed
 ````
+
+#2023-03-06
+---------------------------------------------------------
+    
+### Codecademy Back-End Engineer courses achievements !
+Daily course achievements goals track.
+
+- [x] **Linear Data structure: Introduction**
+- [x] **Linear Data structure: Data sctructures**
+- [x] **Linear Data structure: Nodes**
+- [ ] **Linear Data structure: Singly Linked Lists** → *In progress*
+- [ ] **Linear Data structure: Doubly Linked Lists**
+- [ ] **Linear Data structure: Queues**
+- [ ] **Linear Data structure: Stacks**
+- Total Progression → __80%__
+
+### Project on going !
+
+__Title:__ Codecademy project: Photo Caption Contest
+
+- [x] **Plan the project**
+- [x] **Define endpoints**
+- [x] **Setup the environment**
+- [x] **Create the models**
+- [x] **Create the seeders**
+- [ ] **Create the controllers** → *In progress*
+- [ ] **Create the auth middleware to specific endpoints**
+- [ ] **Create the routes**
+- [ ] **Test the endpoints**
+- [ ] **Configure localized caching**
+- [ ] **Write a swagger documentation**
+- Total Progression → __30%__
+
+__Last commits:__
+
+- "FEAT: Test route '/users' and getUserById controller" → Test passed successfully
