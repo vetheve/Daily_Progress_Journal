@@ -571,7 +571,7 @@ database_test=# SELECT password FROM "Users" WHERE username = 'Vegeta';
  Carambar
 ````
 
->Based on the information in the code provided, I can tell you that I encountered a bug while working on the updateUser controller. I managed to fix the bug but unfortunately, I encountered another issue. I violated the constraint of the "password" argument in the "user" model. To resolve this issue and update the password without any problem, I needed to adjust the maximum number of characters allowed in the password constraint to match the maximum size of bytes of a hashed password length.
+>I encountered a bug while working on the updateUser controller. I managed to fix the bug but unfortunately, I encountered another issue. I violated the constraint of the "password" argument in the "user" model. To resolve this issue and update the password without any problem, I needed to adjust the maximum number of characters allowed in the password constraint to match the maximum size of bytes of a hashed password length.
 
 /workspace/Codecademy_project-Photo_Caption_Contest/controllers/userController.js
 ````
