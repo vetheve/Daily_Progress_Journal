@@ -431,3 +431,143 @@ __Title:__ Codecademy project: Photo Caption Contest
 __Last commits:__
 
 - "FEAT: Test route '/users' and getUserById controller" → Test passed successfully
+
+
+### Issues !
+
+__Title:__ "Updating password with PUT request not reflecting in Users table in database"
+
+__Tags:__ #AVATests #PUTrequest #passwordupdate #bcrypt #databaseupdate #Debugging
+
+__Explanation:__
+
+>When using a "put" request to update the password value, it seems that the password is hashed with bcrypt. However, it does not get updated in the "Users" table in the database.
+
+/workspace/Codecademy_project-Photo_Caption_Contest/controllers/userController.js
+````
+// Importing the User model from the index file in the models directory
+const {
+    User
+} = require('../models/index.js');
+
+exports.updateUser = async (req, res) => {
+    try {
+        const {
+            password,
+            ...rest
+        } = req.body;
+
+        // Retrieve the user instance from the database using the uuid in the request params
+        const user = await User.findByPk(req.params.uuid, {});
+
+        // If user is not found, return a 404 response
+        if (!user) {
+            return res.status(404).json({
+                error: 'User not found',
+            });
+        } else {
+            // Update the user instance with the request body
+            if (password) {
+                user.password = await bcrypt.hash(password, 10); // hash password if present in req.body
+                await user.update(user.password, {
+                    where: {
+                        uuid: req.params.uuid
+                    }
+                })  
+            } else {
+                await user.update(rest, {
+                    where: {
+                        uuid: req.params.uuid
+                    }
+                })    
+            };
+
+            // Return a success response with the updated user object
+            res.status(200).json({
+                message: 'User updated',
+                user
+            });
+        };
+    } catch (error) {
+        // Log any errors to the console
+        console.error(error);
+
+        // Return an error response with the error message
+        res.status(500).json({
+            error: error.message,
+        });
+    }
+};
+````
+
+/workspace/Codecademy_project-Photo_Caption_Contest/tests/user/updateUserTest.js
+````
+const test = require("ava"); // Importing the AVA test library
+const request = require("supertest"); // Importing the supertest library for making HTTP requests
+const apiRouter = require('../../routes/api.js'); // Importing the api router file for the all the routers
+const express = require('express'); // Importing express
+
+// Create an instance of the express application
+const app = express();
+
+// Use the apiRouter with the '/api' route
+app.use('/', apiRouter);
+
+// Use dotenv to access environment variables defined in a '.env' file
+require('dotenv').config()
+
+
+test('1. updateUser function should retrieve a user by uuid and update the password', async t => {
+    
+    const userId = "11f8d972-994e-4830-9a1b-112710eea2d7";
+    
+    const updatedUser = {
+        password: 'malabar'           
+    };
+
+    // Making a GET request to the '/users' route 
+    const res = await request(app).put(`/users/uuid/${userId}`).send(updatedUser);
+
+    // Asserting that the status code of the response is 200
+    t.is(res.status, 200);
+    
+    // Displaying the response body using console.dir to show the entire contents of the objects
+    console.dir(res.body, { depth: null });
+});
+````
+
+Terminal output:
+````
+npm test tests/user/updateUserTest.js
+
+> test
+> ava --require dotenv/config tests/user/updateUserTest.js
+
+
+Executing (default): SELECT "uuid", "username", "email", "password", "createdAt", "updatedAt" FROM "Users" AS "User" WHERE "User"."uuid" = '11f8d972-994e-4830-9a1b-112710eea2d7';
+{
+  message: 'User updated',
+  user: {
+    uuid: '11f8d972-994e-4830-9a1b-112710eea2d7',
+    username: 'Vegeta',
+    email: 'billdoe@example.com',
+    password: '$2b$10$WbEXOQhHpM4LDTA7n2YG2Ocls7vxgoIaEsf8AV4iWbo7o7nWLqFiO',
+    createdAt: '2023-03-06T05:35:30.013Z',
+    updatedAt: '2023-03-06T07:43:42.166Z'
+  }
+}
+  ✔ 1. updateUser function should retrieve a user by uuid and update the password (159ms)
+  ─
+
+  1 test passed
+````
+
+PSQL Terminal output:
+````
+database_test=# SELECT password FROM "Users" WHERE username = 'Vegeta';
+ password 
+----------
+ Carambar
+````
+
+
