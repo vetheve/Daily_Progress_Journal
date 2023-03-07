@@ -656,3 +656,195 @@ ValidationError [SequelizeValidationError]: Validation error: Password must be b
 
   1 test failed
 ````
+
+#2023-03-07
+---------------------------------------------------------
+    
+### Codecademy Back-End Engineer courses achievements !
+Daily course achievements goals track.
+
+- [x] **Linear Data structure: Introduction**
+- [x] **Linear Data structure: Data sctructures**
+- [x] **Linear Data structure: Nodes**
+- [X] **Linear Data structure: Singly Linked Lists**
+- [ ] **Linear Data structure: Doubly Linked Lists** → *In progress*
+- [ ] **Linear Data structure: Queues**
+- [ ] **Linear Data structure: Stacks**
+- Total Progression → __80%__
+
+### Project on going !
+
+__Title:__ Codecademy project: Photo Caption Contest
+
+- [x] **Plan the project**
+- [x] **Define endpoints**
+- [x] **Setup the environment**
+- [x] **Create the models**
+- [x] **Create the seeders**
+- [ ] **Create the controllers** → *In progress*
+- [ ] **Create the auth middleware to specific endpoints**
+- [ ] **Create the routes**
+- [ ] **Test the endpoints**
+- [ ] **Configure localized caching**
+- [ ] **Write a swagger documentation**
+- Total Progression → __30%__
+
+__Last commits:__
+
+- "FEAT: Test route '/users' and getUserById controller" → Test passed successfully
+- "FEAT: add updateUser controller"
+- "FIX: Bug on hashed password for updateUser controller" → Test passed successfully
+
+### Issues !
+
+__Title:__ "Sequelize ORM - Auto-increment function not working for new user creation in database"
+
+__Tags:__ #sequelize.js #node.js #postgresql #auto-increment #database-schema
+
+__StackOverflow:__ [link](https://stackoverflow.com/questions/75660064/sequelize-orm-auto-increment-function-not-working-for-new-user-creation-in-dat)
+
+__Explanation:__
+
+>I use sequelize ORM. I have created a register route and controller to create new user. I created a new user with AVA test, but the auto-increment function isn't working properly. Despite being the fourth user created, this new user created with AVA test has an ID of 1 (The other three users were created using Sequelize seeders). I've checked the database schema and confirmed that the 'id' field is set to auto-increment. Any ideas on how to resolve this issue?
+
+Terminal output :
+````
+npm test .../tests/register/registerTest.js
+
+> test
+> ava --require dotenv/...tests/register/registerTest.js
+
+
+Executing (default): INSERT INTO "Users" ("uuid","username","email","password","createdAt","updatedAt") VALUES ($1,$2,$3,$4,$5,$6) RETURNING "uuid","username","email","password","createdAt","updatedAt";
+  ✔ RegisterNewUser function should create a new user and return a token (127ms)
+    ℹ {
+        token: 'eyJhbGciOiJIUzI1N...Z_iVY8hjgsf9Ak',
+        user: {
+          createdAt: '2023-03-07T07:48:53.393Z',
+          email: 'testuser@example.com',
+          password: '$2b$10$kNeC1h7d0wX7WPQC3H.94OlpXveXVeaP7WaWEIGQN6VLypSVKoAE.',
+          updatedAt: '2023-03-07T07:48:53.393Z',
+          username: 'testuser',
+          uuid: 'e33c6803-1c18-4d25-906f-2d6de8726d27',
+        },
+      }
+  ─
+
+  1 test passed
+````
+
+PSQL Terminal output :
+````
+database_test=# SELECT * FROM "Users";
+
+ id |                 uuid                 | username |        email         |                           password                           |         createdAt          |         updatedAt          
+----+--------------------------------------+----------+----------------------+--------------------------------------------------------------+----------------------------+----------------------------
+  1 | 15bf1cb7-8346-4140-8b36-ced76facb4d7 | johndoe  | johndoe@example.com  | $2b$10$1r.N1fS6ea82w9WgMZmdsevl/awhaWjSfWgwHzMXSWDNPdZlfS.bS | 2023-03-07 07:45:28.403+00 | 2023-03-07 07:45:28.403+00
+  2 | af947f46-2991-43fd-aaec-dec95c40a729 | janedoe  | janedoe@example.com  | $2b$10$8H7ktluUZrr21SzE7Eo2MuegtmaCLMWjxHnQvg8LrlAD1uLI1BICm | 2023-03-07 07:45:28.412+00 | 2023-03-07 07:45:28.412+00
+  3 | d2658a11-b088-4e86-a351-ee628c3a7cad | billdoe  | billdoe@example.com  | $2b$10$CBWz3iUSVot3nLqgSP3z4.ma2tiCp8SaPTKPRC3Z8fjHNMDJs.oIO | 2023-03-07 07:45:28.405+00 | 2023-03-07 07:45:28.405+00
+  1 | e33c6803-1c18-4d25-906f-2d6de8726d27 | testuser | testuser@example.com | $2b$10$kNeC1h7d0wX7WPQC3H.94OlpXveXVeaP7WaWEIGQN6VLypSVKoAE. | 2023-03-07 07:48:53.393+00 | 2023-03-07 07:48:53.393+00
+
+\d "Users"
+
+database_test=# \d "Users"
+                                       Table "public.Users"
+  Column   |           Type           | Collation | Nullable |               Default               
+-----------+--------------------------+-----------+----------+-------------------------------------
+ id        | integer                  |           | not null | nextval('"Users_id_seq"'::regclass)
+ uuid      | uuid                     |           | not null | 
+ username  | character varying(255)   |           | not null | 
+ email     | character varying(255)   |           | not null | 
+ password  | character varying(255)   |           | not null | 
+ createdAt | timestamp with time zone |           | not null | 
+ updatedAt | timestamp with time zone |           | not null | 
+
+````
+
+
+models/user.js
+
+````
+'use strict';
+
+// Import the bcrypt library for password hashing
+const {
+    Model
+} = require('sequelize');
+
+// Import the bcrypt library for password hashing
+const bcrypt = require('bcrypt');
+
+// Define a sequelize model for a User
+module.exports = (sequelize, DataTypes) => {
+    class User extends Model {
+        /**
+         * Helper method for defining associations.
+         * This method is not a part of Sequelize lifecycle.
+         * The `models/index` file will call this method automatically.
+         */
+        static associate(models) {
+...
+                })
+        }
+    }
+    User.init({
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true,
+            allowNull: false
+        },
+        uuid: {
+            type: DataTypes.UUID,
+            defaultValue: DataTypes.UUIDV4,
+            allowNull: false,
+            unique: true,
+            primaryKey: true,
+        },
+
+...
+
+    }, {
+        sequelize,
+        modelName: 'User',
+        // Add hooks to run code before or after certain events
+        hooks: {
+            // Hash the user's password before creating a new user
+            beforeCreate: (User) => {
+                const salt = bcrypt.genSaltSync(10);
+                User.password = bcrypt.hashSync(User.password, salt);
+            }
+        },
+    });
+    return User;
+};
+````
+migrations/20230223064615-create-user.js
+````
+'use strict';
+/** @type {import('sequelize-cli').Migration} */
+module.exports = {
+  async up(queryInterface, Sequelize) {
+    await queryInterface.createTable('Users', {
+	id: {
+	  allowNull: false,
+	  autoIncrement: true,
+	  type: Sequelize.INTEGER,
+	  onDelete: 'CASCADE'
+	},
+...
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      }
+    });
+  },
+  async down(queryInterface, Sequelize) {
+    await queryInterface.dropTable('Users');
+  }
+};
+````
