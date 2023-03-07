@@ -692,6 +692,7 @@ __Title:__ Codecademy project: Photo Caption Contest
 __Last commits:__
 
 - "FEAT: Add delete route to User with deleteUser controller" **→ Test failed**
+- "FIX: deleteUser" *→ Test passed successfully*
 
 ### Issues !
 
