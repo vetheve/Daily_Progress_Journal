@@ -691,9 +691,7 @@ __Title:__ Codecademy project: Photo Caption Contest
 
 __Last commits:__
 
-- "FEAT: Test route '/users' and getUserById controller" → Test passed successfully
-- "FEAT: add updateUser controller"
-- "FIX: Bug on hashed password for updateUser controller" → Test passed successfully
+- "FEAT: Add delete route to User with deleteUser controller" **→ Test failed**
 
 ### Issues !
 
