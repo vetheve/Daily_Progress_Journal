@@ -847,3 +847,52 @@ module.exports = {
   }
 };
 ````
+
+#2023-03-08
+---------------------------------------------------------
+    
+### Codecademy Back-End Engineer courses achievements !
+Daily course achievements goals track.
+
+- [x] **Linear Data structure: Introduction**
+- [x] **Linear Data structure: Data sctructures**
+- [x] **Linear Data structure: Nodes**
+- [X] **Linear Data structure: Singly Linked Lists**
+- [ ] **Linear Data structure: Doubly Linked Lists** → *In progress*
+- [ ] **Linear Data structure: Queues**
+- [ ] **Linear Data structure: Stacks**
+- Total Progression → __80%__
+
+### Project on going !
+
+__Title:__ Codecademy project: Photo Caption Contest
+
+- [x] **Plan the project**
+- [x] **Define endpoints**
+- [x] **Setup the environment**
+- [x] **Create the models**
+- [x] **Create the seeders**
+- [ ] **Create the controllers** → *In progress*
+- [ ] **Create the auth middleware to specific endpoints**
+- [ ] **Create the routes**
+- [ ] **Test the endpoints**
+- [ ] **Configure localized caching**
+- [ ] **Write a swagger documentation**
+- Total Progression → __30%__
+
+__Last commits:__
+
+- "FIX: Bug on ID autoincrementaion refisterNewUser" *→ Test passed successfully*
+
+### Issues !
+
+__Title:__ "Sequelize ORM - Auto-increment function not working for new user creation in database"
+
+__Tags:__ #sequelize.js #node.js #postgresql #auto-increment #database-schema
+
+__StackOverflow:__ [link](https://stackoverflow.com/questions/75660064/sequelize-orm-auto-increment-function-not-working-for-new-user-creation-in-dat)
+
+__Solution:__
+
+>I have manually defined the id field for a user in my seeder code. However, if I am using auto-incrementing IDs in my database, I should not be manually defining the IDs for each record. When I insert a new record into a table with an auto-incrementing ID column, the database will automatically assign the next available ID to that record. By manually defining the ID in my seeder code, I am overriding this behavior and causing potential issues down the line. To fix this issue, I have removed the id field from my seeder code, allowing the database to assign the ID automatically. With this change, the database assigns a unique ID to each user record as it is inserted, ensuring that the IDs are unique and in sequence. 
+
