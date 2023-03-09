@@ -1106,7 +1106,7 @@ __Last commits:__
 - "FIX: Bug on deleteUser" *→ Test passed successfully*
 - "ADD: files to handle routes on photo"
 - "ADD: new files photoController.js and Test.js"
-- "ADD: getAllPhotosTest " *→ Test passed successfully*
+- "FEAT: getAllPhotosTest " *→ Test passed successfully*
 
 ### Issues !
 
