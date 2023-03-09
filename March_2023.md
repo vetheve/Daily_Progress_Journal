@@ -896,3 +896,226 @@ __Solution:__
 
 >I have manually defined the id field for a user in my seeder code. However, if I am using auto-incrementing IDs in my database, I should not be manually defining the IDs for each record. When I insert a new record into a table with an auto-incrementing ID column, the database will automatically assign the next available ID to that record. By manually defining the ID in my seeder code, I am overriding this behavior and causing potential issues down the line. To fix this issue, I have removed the id field from my seeder code, allowing the database to assign the ID automatically. With this change, the database assigns a unique ID to each user record as it is inserted, ensuring that the IDs are unique and in sequence. 
 
+### Issues !
+
+__Title:__ "Sequelize ORM - Update or delete on table "Users" violates foreign key constraint"
+
+__Tags:__ #database #sequelize #foreignkey #constraintviolation #nodejs
+
+__StackOverflow:__ [link](https://stackoverflow.com/questions/253849/cannot-truncate-table-because-it-is-being-referenced-by-a-foreign-key-constraint?rq=1)
+
+__Explanation:__
+
+>I am having an issue with my `deleteUser` function. The function should delete a user by their `UUID`, but when I run my test case, it fails with the following error message:
+
+
+**Terminal output:**
+````
+✘ [fail]: deletetUser function should delete a user by uuid
+    ℹ {
+        error: 'update or delete on table "Users" violates foreign key constraint "Photos_user_id_fkey" on table "Photos"',
+      }
+  ─
+
+  deletetUser function should delete a user by uuid
+  tests/user/deleteUserTest.js:24
+
+   23:     // Asserting that the status code of the response is 204
+   24:     t.is(res.status, 204);                                  
+   25:                                                             
+
+  Difference (- actual, + expected):
+
+  - 500
+  + 204
+
+  › tests/user/deleteUserTest.js:24:7
+
+  ─
+
+  1 test failed
+````
+>The error message suggests a foreign key constraint violation on the Photos table. Looking at the code, it seems that the User model has a hasMany association with the Photo model, where the foreign key is set to user_id, and the `onDelete` option is set to `'CASCADE'`. The Photo model also has a foreign key constraint that references the Users table.
+>
+>I have included the code for the `User` and `Photo` models as well as their migrations for reference.
+>
+>Can anyone help me understand what is causing the issue and how I can fix it? Thank you.
+
+**User model:**
+````
+...
+
+// Define a sequelize model for a User
+module.exports = (sequelize, DataTypes) => {
+    class User extends Model {
+        /**
+         * Helper method for defining associations.
+         * This method is not a part of Sequelize lifecycle.
+         * The `models/index` file will call this method automatically.
+         */
+        static associate(models) {
+            // define association here
+            User.hasMany(models.Photo, {
+                    foreignKey: 'user_id',
+                    as: 'photos',
+                    onDelete: 'CASCADE'
+                }),
+            User.hasMany(models.Caption, {
+                    foreignKey: 'user_id',
+                    as: 'captions',
+                    onDelete: 'CASCADE'
+                }),
+            User.hasMany(models.Vote, {
+                    foreignKey: 'user_id',
+                    as: 'votes',
+                    onDelete: 'CASCADE'
+                })
+        }
+...
+````
+**User migration:**
+````
+'use strict';
+/** @type {import('sequelize-cli').Migration} */
+module.exports = {
+    async up(queryInterface, Sequelize) {
+        await queryInterface.createTable('Users', {
+            id: {
+                allowNull: false,
+                autoIncrement: true,
+                type: Sequelize.INTEGER
+            },
+            uuid: {
+                allowNull: false,
+                unique: true,
+                primaryKey: true,
+                type: Sequelize.UUID,
+                onDelete: 'CASCADE'
+            },
+...
+````
+
+**Photo model:**
+````
+'use strict';
+/** @type {import('sequelize-cli').Migration} */
+module.exports = {
+    async up(queryInterface, Sequelize) {
+        await queryInterface.createTable('Photos', {
+            id: {
+                allowNull: false,
+                unique: true,
+                autoIncrement: true,
+                type: Sequelize.INTEGER
+            },
+            uuid: {
+                allowNull: false,
+                unique: true,
+                primaryKey: true,
+                type: Sequelize.UUID,
+                onDelete: 'CASCADE'
+            },
+            url: {
+                allowNull: false,
+                unique: true,
+                type: Sequelize.STRING
+            },
+            user_id: {
+                allowNull: false,
+                type: Sequelize.UUID,
+                references: {
+                    model: 'Users',
+                    key: 'uuid'
+                },
+                onDelete: 'CASCADE' // cascade deletes to associated photos when a user is deleted
+            },
+...
+````
+
+**Photo migration:**
+````
+'use strict';
+/** @type {import('sequelize-cli').Migration} */
+module.exports = {
+    async up(queryInterface, Sequelize) {
+        await queryInterface.createTable('Photos', {
+            id: {
+                allowNull: false,
+                unique: true,
+                autoIncrement: true,
+                type: Sequelize.INTEGER
+            },
+            uuid: {
+                allowNull: false,
+                unique: true,
+                primaryKey: true,
+                type: Sequelize.UUID,
+                onDelete: 'CASCADE'
+            },
+            url: {
+                allowNull: false,
+                unique: true,
+                type: Sequelize.STRING
+            },
+            user_id: {
+                allowNull: false,
+                type: Sequelize.UUID,
+                references: {
+                    model: 'Users',
+                    key: 'uuid'
+                },
+                onDelete: 'CASCADE' // cascade deletes to associated photos when a user is deleted
+            },
+...
+````
+
+#2023-03-09
+---------------------------------------------------------
+    
+### Codecademy Back-End Engineer courses achievements !
+Daily course achievements goals track.
+
+- [x] **Linear Data structure: Introduction**
+- [x] **Linear Data structure: Data sctructures**
+- [x] **Linear Data structure: Nodes**
+- [x] **Linear Data structure: Singly Linked Lists**
+- [x] **Linear Data structure: Doubly Linked Lists**
+- [ ] **Linear Data structure: Queues** → *In progress*
+- [ ] **Linear Data structure: Stacks**
+- Total Progression → __80%__
+
+### Project on going !
+
+__Title:__ Codecademy project: Photo Caption Contest
+
+- [x] **Plan the project**
+- [x] **Define endpoints**
+- [x] **Setup the environment**
+- [x] **Create the models**
+- [x] **Create the seeders**
+- [ ] **Create the controllers** → *In progress*
+- [ ] **Create the auth middleware to specific endpoints**
+- [ ] **Create the routes**
+- [ ] **Test the endpoints**
+- [ ] **Configure localized caching**
+- [ ] **Write a swagger documentation**
+- Total Progression → __30%__
+
+__Last commits:__
+
+- "FIX: Bug on deleteUser" *→ Test passed successfully*
+- "ADD: files to handle routes on photo"
+- "ADD: new files photoController.js and Test.js"
+- "ADD: getAllPhotosTest " *→ Test passed successfully*
+
+### Issues !
+
+__Title:__ "Sequelize ORM - Update or delete on table "Users" violates foreign key constraint"
+
+__Tags:__ #database #sequelize #foreignkey #constraintviolation #nodejs
+
+__StackOverflow:__ [link](https://stackoverflow.com/questions/253849/cannot-truncate-table-because-it-is-being-referenced-by-a-foreign-key-constraint?rq=1)
+
+__Solution:__ 
+
+>I was wrong about my assumption that deleting all values from the database tables would reset all the constraints. It was a mistake on my part to think that migrating and seeding tables after that was the solution. After reading suggestions on StackOverflow, dropping the database and recreating it, then migrating and seeding all the tables, was the correct approach. Everything is now functioning as expected. 
