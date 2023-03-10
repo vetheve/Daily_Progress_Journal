@@ -1080,7 +1080,7 @@ Daily course achievements goals track.
 - [x] **Linear Data structure: Nodes**
 - [x] **Linear Data structure: Singly Linked Lists**
 - [x] **Linear Data structure: Doubly Linked Lists**
-- [ ] **Linear Data structure: Queues** → *In progress*
+- [ ] **Linear Data structure: Queues**
 - [ ] **Linear Data structure: Stacks**
 - Total Progression → __80%__
 
@@ -1119,3 +1119,53 @@ __StackOverflow:__ [link](https://stackoverflow.com/questions/253849/cannot-trun
 __Solution:__ 
 
 >I was wrong about my assumption that deleting all values from the database tables would reset all the constraints. It was a mistake on my part to think that migrating and seeding tables after that was the solution. After reading suggestions on StackOverflow, dropping the database and recreating it, then migrating and seeding all the tables, was the correct approach. Everything is now functioning as expected. 
+
+
+#2023-03-10
+---------------------------------------------------------
+    
+### Codecademy Back-End Engineer courses achievements !
+Daily course achievements goals track.
+
+- [x] **Linear Data structure: Introduction**
+- [x] **Linear Data structure: Data sctructures**
+- [x] **Linear Data structure: Nodes**
+- [x] **Linear Data structure: Singly Linked Lists**
+- [x] **Linear Data structure: Doubly Linked Lists**
+- [x] **Linear Data structure: Queues**
+- [x] **Linear Data structure: Stacks**
+- Total Progression → __80%__
+
+### Project on going !
+
+__Title:__ Codecademy project: Photo Caption Contest
+
+- [x] **Plan the project**
+- [x] **Define endpoints**
+- [x] **Setup the environment**
+- [x] **Create the models**
+- [x] **Create the seeders**
+- [ ] **Create the controllers** → *In progress*
+- [ ] **Create the auth middleware to specific endpoints**
+- [ ] **Create the routes**
+- [ ] **Test the endpoints**
+- [ ] **Configure localized caching**
+- [ ] **Write a swagger documentation**
+- Total Progression → __30%__
+
+__Last commits:__
+
+- "FIX: Bug on deleteUser" *→ Test passed successfully*
+- "ADD: files to handle routes on photo"
+- "ADD: new files photoController.js and Test.js"
+- "FEAT: getAllPhotosTest " *→ Test passed successfully*
+
+### Issues !
+
+__Title:__ "Sequelize ORM - Update or delete on table "Users" violates foreign key constraint"
+
+__Tags:__ #database #sequelize #foreignkey #constraintviolation #nodejs
+
+__StackOverflow:__ [link](https://stackoverflow.com/questions/253849/cannot-truncate-table-because-it-is-being-referenced-by-a-foreign-key-constraint?rq=1)
+
+__Solution:__ 
