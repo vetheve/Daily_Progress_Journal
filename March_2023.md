@@ -1192,6 +1192,8 @@ __Title:__ Codecademy project: Photo Caption Contest
 
 __Last commits:__
 
-- **"FEAT: updatePhoto"** *→ Test passed successfully*
-- **"FEAT: deletetPhoto"** *→ Test passed successfully*
-- **"FEAT: getPhotoById"** *→ Test passed successfully*
+- **"FEAT: getAllCaptions"** *→ Test passed successfully*
+- **"FEAT: uploadNewPhoto"** *→ Test passed successfully*
+- **"FEAT: getCaptionById"** *→ Test passed successfully*
+- **"FEAT: uploadNewCaption"** *→ Test passed successfully*
+- **"FEAT: updateCaption"** *→ Test passed successfully*
