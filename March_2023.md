@@ -1155,17 +1155,43 @@ __Title:__ Codecademy project: Photo Caption Contest
 
 __Last commits:__
 
-- "FIX: Bug on deleteUser" *→ Test passed successfully*
-- "ADD: files to handle routes on photo"
-- "ADD: new files photoController.js and Test.js"
-- "FEAT: getAllPhotosTest " *→ Test passed successfully*
+- "FEAT: updatePhoto" *→ Test passed successfully*
+- "FEAT: deletetPhoto" *→ Test passed successfully*
+- "FEAT: getPhotoById" *→ Test passed successfully*
 
-### Issues !
+#2023-03-13
+---------------------------------------------------------
+    
+### Codecademy Back-End Engineer courses achievements !
+Daily course achievements goals track.
 
-__Title:__ "Sequelize ORM - Update or delete on table "Users" violates foreign key constraint"
+- [x] **Complex Data Strcutures : Introduction**
+- [x] **Complex Data Strcutures : Hash Maps**
+- [ ] **Complex Data Strcutures : Tree** → *In progress*
+- [ ] **Complex Data Strcutures : Heaps**
+- [ ] **Complex Data Strcutures : Graphs**
+- [ ] **Complex Data Strcutures : Review**
+- Total Progression → __80%__
 
-__Tags:__ #database #sequelize #foreignkey #constraintviolation #nodejs
+### Project on going !
 
-__StackOverflow:__ [link](https://stackoverflow.com/questions/253849/cannot-truncate-table-because-it-is-being-referenced-by-a-foreign-key-constraint?rq=1)
+__Title:__ Codecademy project: Photo Caption Contest
 
-__Solution:__ 
+- [x] **Plan the project**
+- [x] **Define endpoints**
+- [x] **Setup the environment**
+- [x] **Create the models**
+- [x] **Create the seeders**
+- [ ] **Create the controllers** → *In progress*
+- [ ] **Create the auth middleware to specific endpoints**
+- [ ] **Create the routes**
+- [ ] **Test the endpoints**
+- [ ] **Configure localized caching**
+- [ ] **Write a swagger documentation**
+- Total Progression → __30%__
+
+__Last commits:__
+
+- **"FEAT: updatePhoto"** *→ Test passed successfully*
+- **"FEAT: deletetPhoto"** *→ Test passed successfully*
+- **"FEAT: getPhotoById"** *→ Test passed successfully*
